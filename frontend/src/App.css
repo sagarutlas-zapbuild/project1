@@ -13,6 +13,24 @@
   }
 }
 
+.Lead-dashboard-list {
+  width: 18%;
+  text-align: center;
+}
+
+.Custom-heading {
+  font-size: 6vh;
+  color: #272729;
+}
+
+.Sidebar {
+  width: 10;
+  height: 100;
+  border: #000000;
+  background-color: cyan;
+  
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
