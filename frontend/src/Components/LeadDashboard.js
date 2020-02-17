@@ -22,19 +22,19 @@ function LeadDashboard() {
                             <ListGroupItem>
                                 <Label>
                                     LMS System
-                                <input type="radio" name="new"></input>
+                                <input type="radio" name="new" id="lms_system_1"></input>
                                 </Label>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <Label>
                                     E-Learning App
-                                <input type="radio" name="new"></input>
+                                <input type="radio" name="new" id="e-Learning_app_1"></input>
                                 </Label>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <Label>
                                     Marketplace
-                                <input type="radio" name="new"></input>
+                                <input type="radio" name="new" id="marketplace_1"></input>
                                 </Label>
                             </ListGroupItem>
                         </ListGroup>
@@ -46,19 +46,19 @@ function LeadDashboard() {
                             <ListGroupItem>
                                 <Label>
                                     LMS System
-                                <input type="radio" name="Accepted"></input>
+                                <input type="radio" name="Accepted" id="lms_system_2"></input>
                                 </Label>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <Label>
                                     E-Learning App
-                                <input type="radio" name="Accepted"></input>
+                                <input type="radio" name="Accepted" id="e-Learning_app_2"></input>
                                 </Label>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <Label>
                                     Marketplace
-                                <input type="radio" name="Accepted"></input>
+                                <input type="radio" name="Accepted" id="marketplace_2"></input>
                                 </Label>
                             </ListGroupItem>
                         </ListGroup>
@@ -69,19 +69,19 @@ function LeadDashboard() {
                             <ListGroupItem>
                                 <Label>
                                     LMS System
-                                <input type="radio" name="Pitched"></input>
+                                <input type="radio" name="Pitched" id="lms_system_3"></input>
                                 </Label>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <Label>
                                     E-Learning App
-                                <input type="radio" name="Pitched"></input>
+                                <input type="radio" name="Pitched" id="e-Learning_app_2"></input>
                                 </Label>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <Label>
                                     Marketplace
-                                <input type="radio" name="Pitched"></input>
+                                <input type="radio" name="Pitched" id="marketplace_3"></input>
                                 </Label>
                             </ListGroupItem>
                         </ListGroup>
