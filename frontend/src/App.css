@@ -70,3 +70,17 @@
     transform: rotate(360deg);
   }
 }
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+#border{
+
+  border-style: groove;
+  border-color:black;
+}
+#margin {
+  border: 1px solid blue; 
+  padding: 50px 50px 50px 50px;
+}
