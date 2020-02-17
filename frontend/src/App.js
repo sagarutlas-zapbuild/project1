@@ -6,8 +6,11 @@ import Leadform from './Components/Leadform';
 
 function App() {
   return (
-    <Leadform/ >
-  );
+    <Leadform>
+      
+    </Leadform>
+ 
+     );
 }
 
 export default App;

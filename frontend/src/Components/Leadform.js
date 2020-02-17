@@ -126,6 +126,13 @@ const Leadform = (props) => {
                   <label class="control-label col-sm-6" htmlFor="assignee">
                     Assignee*
             </label>
+            <br/>
+            <label class="control-label col-sm-6" htmlFor="assignee">
+            <input type ="radio" ></input>
+
+                    Assignee To 
+                  
+            </label>
                   <button class="control-input col-sm-6" >Dropdown</button>
                   <div className="dropdown-content" id="assignee">
                   </div>
@@ -134,10 +141,8 @@ const Leadform = (props) => {
             </Row>
             <row>
               <Col>
-              <label class="control-label col-sm-4">
-                Prospect Detail
-              </label>
-              <label>LINK</label>
+               <input type="Text"  value="Prospect Detail" class="text-center"></input>
+              <label class="control-label col-sm-5" htmlFor="prospect_detail">Existing? </label>
               </Col>
             </row>
             <div id="border">
@@ -263,17 +268,17 @@ const Leadform = (props) => {
           <Row>
             <Col>
 
-              <input type="Button" value="Submit And New" id="Submit_and_new">
+              <input  class ="text-center" type="Button" value="Submit And New" id="Submit_and_new">
               </input>
             </Col>
             <Col>
 
-              <input type="Button" value="     Submit    " id="submit">
+              <input  class ="text-center" type="Button" value="Submit" id="submit">
               </input>
             </Col>
             <Col>
 
-              <input type="Button" value="     Cancel     " id="cancel">
+              <input  class ="text-center" type="Button" value="Cancel" id="cancel">
               </input>
             </Col>
 
