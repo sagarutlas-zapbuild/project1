@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LeadDashboard from './Components/LeadDashboard'
+import Dashboard from './Components/LeadDashboard'
 
 function App() {
   return (
-    <LeadDashboard/ >
+    <Dashboard/>
   );
 }
 
