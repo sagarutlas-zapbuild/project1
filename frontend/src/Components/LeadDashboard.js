@@ -33,19 +33,19 @@ class Dashboard extends React.Component {
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">LMS System</Label>
-                                            <input type="radio" name="new" onChange={handlechange.bind(this)}></input>
+                                            <input type="radio" name="new" id="lms_system_new" onChange={handlechange.bind(this)}></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">E-Learning App</Label>
-                                            <input type="radio" name="new"></input>
+                                            <input type="radio" name="new" id ="e-learning_app_new"></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">Marketplace</Label>
-                                            <input type="radio" name="new"></input>
+                                            <input type="radio" name="new" id ="marketplace_new"></input>
 
                                         </ListGroupItem>
                                     </ListGroup>
@@ -60,19 +60,19 @@ class Dashboard extends React.Component {
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">LMS System</Label>
-                                            <input type="radio" name="Accepted"></input>
+                                            <input type="radio" name="Accepted" id="lms_system_accepted"></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">E-Learning</Label>
-                                            <input type="radio" name="Accepted"></input>
+                                            <input type="radio" name="Accepted" id="e-learning_accepted"></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">Marketplace</Label>
-                                            <input type="radio" name="Accepted"></input>
+                                            <input type="radio" name="Accepted" id="marketplace_accepted" ></input>
 
                                         </ListGroupItem>
                                     </ListGroup>
@@ -91,19 +91,19 @@ class Dashboard extends React.Component {
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">LMS System</Label>
-                                            <input type="radio" name="Pitched"></input>
+                                            <input type="radio" name="Pitched" id="lms_system_pitched"></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">E-Learning</Label>
-                                            <input type="radio" name="Pitched"></input>
+                                            <input type="radio" name="Pitched" id="e-learning_pitched"></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">Marketplace</Label>
-                                            <input type="radio" name="Pitched"></input>
+                                            <input type="radio" name="Pitched" id="marketplace_pitched"></input>
 
                                         </ListGroupItem>
                                     </ListGroup>
