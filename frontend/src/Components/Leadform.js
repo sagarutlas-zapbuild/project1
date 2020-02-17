@@ -84,10 +84,10 @@ const Leadform = (props) => {
             <Row>
               <Col>
                 <div className="form-group">
-                  <label  class="control-label col-sm-9"  htmlFor="attachment">
+                  <label  className="control-label col-sm-5"  htmlFor="attachment">
                     Attachment
             </label>
-                  <input  class="control-input col-sm-3"  type="file" id="attachment"
+                  <input  className="control-input col-sm-3"  type="file" id="attachment"
                   />
 
                 </div>
@@ -99,7 +99,7 @@ const Leadform = (props) => {
             </label>
                   <br />
                   <button className="form-control">Dropdown</button>
-                  <div className="dropdown-content" id="technology" >
+                  <div  id="technology" >
                   </div>
                 </div>
               </Col>
@@ -107,65 +107,67 @@ const Leadform = (props) => {
             <Row>
               <Col>
               <div className="form-group">
-                      <label class="control-label col-sm-5" htmlFor="estimated_budget">
+                      <label className="control-label col-sm-5" htmlFor="estimated_budget">
                         Estimated Budget($)
             </label>
-                      <input class="control-input col-sm-7" type="Text" id="estimated_budget" width="50px">
+                      <input className="control-input col-sm-7" type="Text" id="estimated_budget" width="50px">
                       </input>
                     </div>
                 <div className="form-group">
-                  <label class="control-label col-sm-5" htmlFor="referred_by">
+                  <label className="control-label col-sm-5" htmlFor="referred_by">
                     Referred By
             </label>
-                  <input class="control-input col-sm-7" type="Text" id="referred_by" width="50px">
+                  <input className="control-input col-sm-7" type="Text" id="referred_by" width="50px">
                   </input>
                 </div>
               </Col>
               <Col >
                 <div className="dropdown">
-                  <label class="control-label col-sm-6" htmlFor="assignee">
+                  <label className="control-label col-sm-6" htmlFor="assignee">
                     Assignee*
             </label>
             <br/>
-            <label class="control-label col-sm-6" htmlFor="assignee">
+            <label className="control-label col-sm-6" htmlFor="assignee">
             <input type ="radio" ></input>
 
                     Assignee To 
                   
             </label>
-                  <button class="control-input col-sm-6" >Dropdown</button>
+                  <button className="control-input col-sm-6" >Dropdown</button>
                   <div className="dropdown-content" id="assignee">
                   </div>
                 </div>
               </Col>
             </Row>
             <row>
-              <Col>
-               <input type="Text"  value="Prospect Detail" class="text-center"></input>
-              <label class="control-label col-sm-5" htmlFor="prospect_detail">Existing? </label>
+            <div className="form-group">           
+               <Col>
+               <input  type="Text"  value="Prospect Detail" className="text-center"></input>
+              <label  htmlFor="prospect_detail">Existing? </label>
               </Col>
+              </div>
             </row>
             <div id="border">
               <div id="margin">
-              <form class="form-horizontal" action="/action_page.php">
+              <form className="form-horizontal" action="/action_page.php">
 
                 <Row>
                   <Col>
 
                     <div className="form-group">
-                      <label class="control-label col-sm-5" htmlFor="full_name">
+                      <label className="control-label col-sm-5" htmlFor="full_name">
                         Full Name
             </label>
-                      <input class="control-input col-sm-6" type="Text" id="full_name" width="50px">
+                      <input className="control-input col-sm-6" type="Text" id="full_name" width="50px">
                       </input>
                     </div>
                   </Col>
                   <Col >
                     <div className="dropdown">
-                      <label class="control-label col-sm-5" htmlFor="street_address">
+                      <label className="control-label col-sm-5" htmlFor="street_address">
                         Street Address
             </label>
-                      <input class="control-input col-sm-6" type="Text" id="street_address" width="50px">
+                      <input className="control-input col-sm-6" type="Text" id="street_address" width="50px">
                       </input>
 
                     </div>
@@ -175,19 +177,19 @@ const Leadform = (props) => {
                   <Col>
 
                     <div className="form-group">
-                      <label class="control-label col-sm-5" htmlFor="email">
+                      <label className="control-label col-sm-5" htmlFor="email">
                         Email
             </label>
-                      <input class="control-input col-sm-6" type="Text" id="email" width="50px">
+                      <input className="control-input col-sm-6" type="Text" id="email" width="50px">
                       </input>
                     </div>
                   </Col>
                   <Col >
                     <div className="dropdown">
-                      <label class="control-label col-sm-5" htmlFor="city">
+                      <label className="control-label col-sm-5" htmlFor="city">
                         City
             </label>
-                      <input class="control-input col-sm-6" type="Text" id="city" width="50px">
+                      <input className="control-input col-sm-6" type="Text" id="city" width="50px">
                       </input>
 
                     </div>
@@ -197,19 +199,19 @@ const Leadform = (props) => {
                   <Col>
 
                     <div className="form-group">
-                      <label class="control-label col-sm-5" htmlFor="company">
+                      <label className="control-label col-sm-5" htmlFor="company">
                         Company
             </label>
-                      <input class="control-input col-sm-6" type="Text" id="company" width="50px">
+                      <input className="control-input col-sm-6" type="Text" id="company" width="50px">
                       </input>
                     </div>
                   </Col>
                   <Col >
                     <div className="dropdown">
-                      <label class="control-label col-sm-5" htmlFor="state">
+                      <label className="control-label col-sm-5" htmlFor="state">
                         State
             </label>
-                      <input class="control-input col-sm-6" type="Text" id="state" width="50px">
+                      <input className="control-input col-sm-6" type="Text" id="state" width="50px">
                       </input>
 
                     </div>
@@ -219,19 +221,19 @@ const Leadform = (props) => {
                   <Col>
 
                     <div className="form-group">
-                      <label class="control-label col-sm-5" htmlFor="designation">
+                      <label className="control-label col-sm-5" htmlFor="designation">
                         Designation
             </label>
-                      <input class="control-input col-sm-6" type="Text" id="designation" width="50px">
+                      <input className="control-input col-sm-6" type="Text" id="designation" width="50px">
                       </input>
                     </div>
                   </Col>
                   <Col >
                     <div className="dropdown">
-                      <label class="control-label col-sm-5" htmlFor="country">
+                      <label classname="control-label col-sm-5" htmlFor="country">
                         Country
             </label>
-                      <input class="control-input col-sm-6" type="Text" id="country" width="50px">
+                      <input classname="control-input col-sm-6" type="Text" id="country" width="50px">
                       </input>
 
                     </div>
@@ -241,19 +243,19 @@ const Leadform = (props) => {
                   <Col>
 
                     <div className="form-group">
-                      <label class="control-label col-sm-5" htmlFor="skype_id">
+                      <label classname="control-label col-sm-5" htmlFor="skype_id">
                         Skype Id
             </label>
-                      <input class="control-input col-sm-6" type="Text" id="skype_id" width="50px">
+                      <input className="control-input col-sm-6" type="Text" id="skype_id" width="50px">
                       </input>
                     </div>
                   </Col>
                   <Col >
                     <div className="dropdown">
-                      <label class="control-label col-sm-5" htmlFor="phone">
+                      <label className="control-label col-sm-5" htmlFor="phone">
                         Phone
             </label>
-                      <input class="control-input col-sm-6" type="Text" id="phone" width="50px">
+                      <input className="control-input col-sm-6" type="Text" id="phone" width="50px">
                       </input>
 
                     </div>
@@ -268,17 +270,17 @@ const Leadform = (props) => {
           <Row>
             <Col>
 
-              <input  class ="text-center" type="Button" value="Submit And New" id="Submit_and_new">
+              <input  className ="text-center" type="Button" value="Submit And New" id="Submit_and_new">
               </input>
             </Col>
             <Col>
 
-              <input  class ="text-center" type="Button" value="Submit" id="submit">
+              <input  className ="text-center" type="Button" value="Submit" id="submit">
               </input>
             </Col>
             <Col>
 
-              <input  class ="text-center" type="Button" value="Cancel" id="cancel">
+              <input  className ="text-center" type="Button" value="Cancel" id="cancel">
               </input>
             </Col>
 
