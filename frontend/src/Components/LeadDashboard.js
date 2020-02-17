@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Label, ListGroup, ListGroupItem, ListGroupItemHeading, Col, Row } from 'reactstrap'
-import NewPopup from './Popups/new'; 
+import NewModal from './Modals/NewModal'; 
 
 
 const handlechange = () => {
     return(
-        NewPopup())
+        NewModal())
 }
 class Dashboard extends React.Component {
 

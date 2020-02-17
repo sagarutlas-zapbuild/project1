@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 /* import Popup from 'reactjs-popup' */
 import { Modal, Button } from 'reactstrap';
 
-function NewPopup(){
+function NewModal(){
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -32,4 +32,4 @@ function NewPopup(){
   );
 }
 
-export default NewPopup
+export default NewModal
