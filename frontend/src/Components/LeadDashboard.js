@@ -1,14 +1,28 @@
 import React from 'react';
 import { Container, Label, ListGroup, ListGroupItem, ListGroupItemHeading, Col, Row } from 'reactstrap'
-import NewPopup from './Popups/new'; 
+import ModalExample from './Modals/ModalExample'; 
 
-
-const handlechange = () => {
-    return(
-        NewPopup())
-}
+/* let props = []
+const handlechange = (props) => {
+    
+        return 
+} */
 class Dashboard extends React.Component {
 
+    constructor(props){
+        super(props);
+        this.showModal =  this.showModal.bind(this);
+    }
+
+    state = {
+        showModal: false
+    }
+
+    showModal(){
+        this.setState({
+            showModal: true,
+        })
+    }
     
     render() {
         return (
@@ -28,12 +42,12 @@ class Dashboard extends React.Component {
 
                                             <ListGroupItemHeading >
                                                 New
-                            </ListGroupItemHeading>
+                                            </ListGroupItemHeading>
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">LMS System</Label>
-                                            <input type="radio" name="new" id="lms_system_new" onChange={handlechange.bind(this)}></input>
+                                            <input type="radio" name="new" id="lms_system_new" onClick={this.showModal}></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
@@ -56,7 +70,7 @@ class Dashboard extends React.Component {
 
                                             <ListGroupItemHeading >
                                                 Accepted
-                            </ListGroupItemHeading>   </ListGroupItem>
+                                            </ListGroupItemHeading>   </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">LMS System</Label>
@@ -139,6 +153,7 @@ class Dashboard extends React.Component {
                         </Container>
                     </Col>
                 </Row>
+                <ModalExample showModal={this.state.showModal} />
             </Container>
         )
     }

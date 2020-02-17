@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+//import LeadDashboard from './Components/LeadDashboard'
+import Leadform from './Components/Leadform';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import LeadDashboard from './Components/LeadDashboard'
 import Leadform from './Components/Leadform';
@@ -9,8 +11,7 @@ function App() {
     <div className="App">
     <Leadform/>
     </div>
+     );
 
-  );
 }
-
 export default App;
