@@ -17,87 +17,6 @@ class Dashboard extends React.Component {
                     <Col className="Sidebar" sm="1">
                         For Sidebar
                 </Col>
-<<<<<<< HEAD
-                <Col sm="11">
-                    <p className="Custom-heading">
-                        Lead Dashboard
-                    </p>
-                    <Row>
-                        
-                        <ListGroup className="Lead-dashboard-list">
-                            <ListGroupItemHeading>
-                                New
-                            </ListGroupItemHeading>
-                            <ListGroupItem>
-                                <Label>
-                                    LMS System
-                                <input type="radio" name="new" id="lms_system_1"></input>
-                                </Label>
-                            </ListGroupItem>
-                            <ListGroupItem>
-                                <Label>
-                                    E-Learning App
-                                <input type="radio" name="new" id="e-Learning_app_1"></input>
-                                </Label>
-                            </ListGroupItem>
-                            <ListGroupItem>
-                                <Label>
-                                    Marketplace
-                                <input type="radio" name="new" id="marketplace_1"></input>
-                                </Label>
-                            </ListGroupItem>
-                        </ListGroup>
-                        
-                        <ListGroup className="Lead-dashboard-list">
-                            <ListGroupItemHeading>
-                                Accepted
-                            </ListGroupItemHeading>
-                            <ListGroupItem>
-                                <Label>
-                                    LMS System
-                                <input type="radio" name="Accepted" id="lms_system_2"></input>
-                                </Label>
-                            </ListGroupItem>
-                            <ListGroupItem>
-                                <Label>
-                                    E-Learning App
-                                <input type="radio" name="Accepted" id="e-Learning_app_2"></input>
-                                </Label>
-                            </ListGroupItem>
-                            <ListGroupItem>
-                                <Label>
-                                    Marketplace
-                                <input type="radio" name="Accepted" id="marketplace_2"></input>
-                                </Label>
-                            </ListGroupItem>
-                        </ListGroup>
-                        <ListGroup className="Lead-dashboard-list">
-                            <ListGroupItemHeading>
-                                Pitched
-                            </ListGroupItemHeading>
-                            <ListGroupItem>
-                                <Label>
-                                    LMS System
-                                <input type="radio" name="Pitched" id="lms_system_3"></input>
-                                </Label>
-                            </ListGroupItem>
-                            <ListGroupItem>
-                                <Label>
-                                    E-Learning App
-                                <input type="radio" name="Pitched" id="e-Learning_app_2"></input>
-                                </Label>
-                            </ListGroupItem>
-                            <ListGroupItem>
-                                <Label>
-                                    Marketplace
-                                <input type="radio" name="Pitched" id="marketplace_3"></input>
-                                </Label>
-                            </ListGroupItem>
-                        </ListGroup>
-                        <ListGroup className="Lead-dashboard-list">
-                            <ListGroupItemHeading>
-                                Response Generated
-=======
                     <Col sm="11">
                         <Container className="List-container">
 
@@ -109,25 +28,24 @@ class Dashboard extends React.Component {
 
                                             <ListGroupItemHeading >
                                                 New
->>>>>>> 8c9a3632fc0cecb38edacc64657c498aa7e26e04
                             </ListGroupItemHeading>
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">LMS System</Label>
-                                            <input type="radio" name="new" onChange={handlechange.bind(this)}></input>
+                                            <input type="radio" name="new" id="lms_system_new" onChange={handlechange.bind(this)}></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">E-Learning App</Label>
-                                            <input type="radio" name="new"></input>
+                                            <input type="radio" name="new" id ="e-learning_app_new"></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">Marketplace</Label>
-                                            <input type="radio" name="new"></input>
+                                            <input type="radio" name="new" id ="marketplace_new"></input>
 
                                         </ListGroupItem>
                                     </ListGroup>
@@ -142,19 +60,19 @@ class Dashboard extends React.Component {
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">LMS System</Label>
-                                            <input type="radio" name="Accepted"></input>
+                                            <input type="radio" name="Accepted" id="lms_system_accepted"></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">E-Learning</Label>
-                                            <input type="radio" name="Accepted"></input>
+                                            <input type="radio" name="Accepted" id="e-learning_accepted"></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">Marketplace</Label>
-                                            <input type="radio" name="Accepted"></input>
+                                            <input type="radio" name="Accepted" id="marketplace_accepted" ></input>
 
                                         </ListGroupItem>
                                     </ListGroup>
@@ -173,19 +91,19 @@ class Dashboard extends React.Component {
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">LMS System</Label>
-                                            <input type="radio" name="Pitched"></input>
+                                            <input type="radio" name="Pitched" id="lms_system_pitched"></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">E-Learning</Label>
-                                            <input type="radio" name="Pitched"></input>
+                                            <input type="radio" name="Pitched" id="e-learning_pitched"></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">Marketplace</Label>
-                                            <input type="radio" name="Pitched"></input>
+                                            <input type="radio" name="Pitched" id="marketplace_pitched"></input>
 
                                         </ListGroupItem>
                                     </ListGroup>
