@@ -1,29 +1,28 @@
 import React from 'react';
 import { Container, Label, ListGroup, ListGroupItem, ListGroupItemHeading, Col, Row } from 'reactstrap'
-import ModalExample from './Modals/ModalExample'; 
+import ModalExample from './Modals/ModalExample';
 
-/* let props = []
-const handlechange = (props) => {
-    
-        return 
-} */
+
+
 class Dashboard extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.showModal =  this.showModal.bind(this);
+        this.showModal = this.showModal.bind(this);
     }
 
     state = {
         showModal: false
     }
 
-    showModal(){
+    showModal() {
+        console.log("showModal Called");
         this.setState({
             showModal: true,
-        })
+        });
+        
     }
-    
+
     render() {
         return (
             <Container fluid={true} className="Full-screen">
@@ -45,21 +44,21 @@ class Dashboard extends React.Component {
                                             </ListGroupItemHeading>
                                         </ListGroupItem>
                                         <ListGroupItem action>
+                                        <ModalExample showModal={this.state.showModal} />
 
-                                            <Label className="Radio-label">LMS System</Label>
-                                            <input type="radio" name="new" id="lms_system_new" onClick={this.showModal}></input>
+                                    
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">E-Learning App</Label>
-                                            <input type="radio" name="new" id ="e-learning_app_new"></input>
+                                            <input type="radio" name="new" id="e-learning_app_new"></input>
 
                                         </ListGroupItem>
                                         <ListGroupItem action>
 
                                             <Label className="Radio-label">Marketplace</Label>
-                                            <input type="radio" name="new" id ="marketplace_new"></input>
+                                            <input type="radio" name="new" id="marketplace_new"></input>
 
                                         </ListGroupItem>
                                     </ListGroup>
@@ -153,7 +152,8 @@ class Dashboard extends React.Component {
                         </Container>
                     </Col>
                 </Row>
-                <ModalExample showModal={this.state.showModal} />
+
+                
             </Container>
         )
     }

@@ -9,7 +9,7 @@ import Dashboard from './Components/LeadDashboard'
 function App() {
   return (<>
     <Dashboard/>
-    <Leadform/>
+    
    </>
 
      );
