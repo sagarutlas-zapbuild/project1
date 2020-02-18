@@ -1,27 +1,10 @@
 import React from 'react';
-import { Container, Label, ListGroup, ListGroupItem, ListGroupItemHeading, Col, Row } from 'reactstrap'
-import ModalExample from './Modals/ModalExample';
+import { Container, ListGroup, ListGroupItem, ListGroupItemHeading, Col, Row } from 'reactstrap'
+import ModalConductor from './Conductors/ModalConductor'
 
 
 
 class Dashboard extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.showModal = this.showModal.bind(this);
-    }
-
-    state = {
-        showModal: false
-    }
-
-    showModal() {
-        console.log("showModal Called");
-        this.setState({
-            showModal: true,
-        });
-        
-    }
 
     render() {
         return (
@@ -43,53 +26,41 @@ class Dashboard extends React.Component {
                                                 New
                                             </ListGroupItemHeading>
                                         </ListGroupItem>
+
                                         <ListGroupItem action>
-                                        <ModalExample showModal={this.state.showModal} />
-
-                                    
-
+                                            <ModalConductor status='New' labelText="LMS System" />
                                         </ListGroupItem>
+
                                         <ListGroupItem action>
-
-                                            <Label className="Radio-label">E-Learning App</Label>
-                                            <input type="radio" name="new" id="e-learning_app_new"></input>
-
+                                            <ModalConductor status='New' labelText="E-Learning App" />
                                         </ListGroupItem>
+
                                         <ListGroupItem action>
-
-                                            <Label className="Radio-label">Marketplace</Label>
-                                            <input type="radio" name="new" id="marketplace_new"></input>
-
+                                            <ModalConductor status='New' labelText="Marketplace" />
                                         </ListGroupItem>
                                     </ListGroup>
                                 </Col>
+
                                 <Col sm="3">
                                     <ListGroup className="Lead-dashboard-list">
                                         <ListGroupItem color="info">
-
                                             <ListGroupItemHeading >
                                                 Accepted
-                                            </ListGroupItemHeading>   </ListGroupItem>
-                                        <ListGroupItem action>
-
-                                            <Label className="Radio-label">LMS System</Label>
-                                            <input type="radio" name="Accepted" id="lms_system_accepted"></input>
-
+                                            </ListGroupItemHeading>
                                         </ListGroupItem>
+
                                         <ListGroupItem action>
-
-                                            <Label className="Radio-label">E-Learning</Label>
-                                            <input type="radio" name="Accepted" id="e-learning_accepted"></input>
-
+                                            <ModalConductor status='Accepted' labelText="LMS System" />
                                         </ListGroupItem>
+
                                         <ListGroupItem action>
+                                            <ModalConductor status='Accepted' labelText="E-Learning App" />
+                                        </ListGroupItem>
 
-                                            <Label className="Radio-label">Marketplace</Label>
-                                            <input type="radio" name="Accepted" id="marketplace_accepted" ></input>
-
+                                        <ListGroupItem action>
+                                            <ModalConductor status='Accepted' labelText="Marketplace" />
                                         </ListGroupItem>
                                     </ListGroup>
-
                                 </Col>
                                 <Col sm="3">
 
@@ -101,23 +72,17 @@ class Dashboard extends React.Component {
                                             <ListGroupItemHeading >
                                                 Pitched
                             </ListGroupItemHeading>   </ListGroupItem>
+
                                         <ListGroupItem action>
-
-                                            <Label className="Radio-label">LMS System</Label>
-                                            <input type="radio" name="Pitched" id="lms_system_pitched"></input>
-
+                                            <ModalConductor status='Pitched' labelText="LMS System" />
                                         </ListGroupItem>
+
                                         <ListGroupItem action>
-
-                                            <Label className="Radio-label">E-Learning</Label>
-                                            <input type="radio" name="Pitched" id="e-learning_pitched"></input>
-
+                                            <ModalConductor status='Pitched' labelText="E-Learning App" />
                                         </ListGroupItem>
+
                                         <ListGroupItem action>
-
-                                            <Label className="Radio-label">Marketplace</Label>
-                                            <input type="radio" name="Pitched" id="marketplace_pitched"></input>
-
+                                            <ModalConductor status='Pitched' labelText="Marketplace" />
                                         </ListGroupItem>
                                     </ListGroup>
                                 </Col>
@@ -129,22 +94,15 @@ class Dashboard extends React.Component {
                                                 Response Generated
                             </ListGroupItemHeading>   </ListGroupItem>
                                         <ListGroupItem action>
-
-                                            <Label className="Radio-label">LMS System</Label>
-                                            <input type="radio" name="Response Generated"></input>
-
+                                            <ModalConductor status='ResponseGenerated' labelText="LMS System" />
                                         </ListGroupItem>
+
                                         <ListGroupItem action>
-
-                                            <Label className="Radio-label">E-Learning</Label>
-                                            <input type="radio" name="Response Generated"></input>
-
+                                            <ModalConductor status='ResponseGenerated' labelText="E-Learning App" />
                                         </ListGroupItem>
+
                                         <ListGroupItem action>
-
-                                            <Label className="Radio-label">Marketplace</Label>
-                                            <input type="radio" name="Response Generated"></input>
-
+                                            <ModalConductor status='ResponseGenerated' labelText="Marketplace" />
                                         </ListGroupItem>
                                     </ListGroup>
                                 </Col>
@@ -153,7 +111,7 @@ class Dashboard extends React.Component {
                     </Col>
                 </Row>
 
-                
+
             </Container>
         )
     }

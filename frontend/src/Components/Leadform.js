@@ -230,10 +230,10 @@ const Leadform = (props) => {
                   </Col>
                   <Col >
                     <div className="dropdown">
-                      <label classname="control-label col-sm-5" htmlFor="country">
+                      <label classname="control-label col-sm-3" htmlFor="country">
                         Country
             </label>
-                      <input classname="control-input col-sm-6" type="Text" id="country" width="50px">
+                      <input classname="control-input col-sm-4" type="Text" id="country" width="50px">
                       </input>
 
                     </div>
