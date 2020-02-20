@@ -1,1 +1,6 @@
 node_modules
+env
+.gitignore
+*.pyc
+.vscode/settings.json
+db.sqlite3
