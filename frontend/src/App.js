@@ -7,9 +7,9 @@ import Leadform from './Components/Leadform';
 import Dashboard from './Components/LeadDashboard'
 
 function App() {
-  return (
-    <Dashboard/>
+  return (<>
+    <Dashboard/></>
      );
-
+     
 }
 export default App;
