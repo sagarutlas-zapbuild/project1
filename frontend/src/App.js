@@ -8,8 +8,8 @@ import Dashboard from './Components/LeadDashboard'
 
 function App() {
   return (<>
-    <Dashboard/></>
-     );
+    <Dashboard/>
+    </>);
      
 }
 export default App;
