@@ -1,18 +1,10 @@
 from django.db import models
-from phone_field import Phone_Field
 
 # Create your models here.
-class lead(models.Model):
-    lead_id = models.AutoField(primary_key = True, unique = True)
-    lead_title = models.CharField(max_length=50)
-    lead_source = models.CharField(max_length=50)
-    lead_description = models.CharField(max_length=1000, default="")
-    lead_url = models.URLField()
-    lead_domain = models.CharField(max_length=50)
-    lead_technology = models.CharField(max_length=50)
-    lead_estimated_budget = models.DecimalField(decimal_places=2, )
-    lead_reffered_by = models.CharField(max_length = 50)
-    lead_assignee = models.CharField(max_length = 50)
+
+
+
+
 
 class prospect(models.Model):
     prospect_id = models.AutoField(primary_key = True, unique = True)
@@ -25,10 +17,29 @@ class prospect(models.Model):
     prospect_state = models.CharField(max_length= 20)
     prospect_country = models.CharField(max_length= 55)
 
+class lead(models.Model):
+    lead_id = models.AutoField(primary_key = True, unique = True)
+    lead_prospect = models.ForeignKey(prospect, on_delete = models.CASCADE)
+    lead_title = models.CharField(max_length=50)
+    lead_source = models.CharField(max_length=50)
+    lead_description = models.CharField(max_length=1000, default="")
+    lead_url = models.URLField()
+    lead_domain = models.CharField(max_length=50)
+    lead_technology = models.CharField(max_length=50)
+    lead_estimated_budget = models.DecimalField(max_digits = 15, decimal_places= 2)
+    lead_reffered_by = models.CharField(max_length = 50)
+    lead_assignee = models.CharField(max_length = 50)
+
+
 class email(models.Model):
     email_id = models.EmailField(primary_key=True, unique= True)
-    email_prospect_id = models.ForeignKey(prospect, on_delete = models.CASCADE)
+    email_prospect = models.ForeignKey(prospect, on_delete = models.CASCADE)
 
-class phone(models.Model):
-    phone_id = Phone_Field(primary_key=True, unique= True)
-    phone__prospect_id = models.ForeignKey(prospect, on_delete = models.CASCADE)
+class phone_number(models.Model):
+    phone_id = models.BigIntegerField(primary_key=True, unique= True)
+    phone_prospect = models.ForeignKey(prospect, on_delete = models.CASCADE)
+
+class attachment(models.Model):
+    attachment_id = models.AutoField(primary_key = True, unique = True)
+    attachment = models.FileField(upload_to= 'uploads/')
+    attachment_lead = models.ForeignKey(lead, on_delete = models.CASCADE)

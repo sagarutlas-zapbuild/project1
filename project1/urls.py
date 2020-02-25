@@ -16,6 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from DatabaseAPI import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('leads/', views.leadlist.as_view()),
+    path('attachments/', views.attachmentlist.as_view()),
+    path('phone_numbers/', views.phone_numberlist.as_view()),
+    path('emails/', views.emaillist.as_view()),
+    path('prospects/', views.prospectlist.as_view()),
+    
+    
 ]
