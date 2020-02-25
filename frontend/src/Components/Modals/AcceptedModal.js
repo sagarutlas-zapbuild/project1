@@ -7,9 +7,16 @@ const AcceptedModal = (props) => {
   } = props;
 
   const [modal, setModal] = useState(false);
+  const [nestedModal, setNestedModal] = useState(false);
+  const [closeAll, setCloseAll] = useState(false);
 
 
   const toggle = () => setModal(!modal);
+  const toggleNested = () => {
+    setNestedModal(!nestedModal);
+    setCloseAll(false);
+  }
+  
 
   return (
     <div>
@@ -17,11 +24,11 @@ const AcceptedModal = (props) => {
       <Label className="Radio-label">{labelText}</Label>
       <input type="radio" name="new" onClick={toggle}></input>
 
-      <Modal className="modal-dailog modal-lg" isOpen={modal} toggle={toggle}>
-  <ModalHeader toggle={toggle}>{labelText}</ModalHeader>
+      <Modal  id="acceptedmodal" className="modal-dailog modal-lg" isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>{labelText}</ModalHeader>
         <ModalBody>
 
-        <div class="container">
+          <div class="container">
             <div class="row">
 
               <div class="col-sm-8">
@@ -35,27 +42,6 @@ const AcceptedModal = (props) => {
                 />
                 <div id="margin1" class="float-left w3-border w3-padding">
                   <label className="text-center"><b>Prospect Detail</b></label>
-                  
-                </div>
-                <textarea
-                  id="description_new"
-                  rows="5" cols="51" 
-                /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
-
-<textarea value={value}  defaultValue="val" /> */
-
-                />
-                <div class="row">
-        <div class="col-lg-12">
-        <button class="btn btn-secondary float-right">Edit</button>
-       </div>
-       </div>
-                <br/>
-                <br/>
-                
-                <div id="margin1" class="float-left w3-border w3-padding">
-                  <label className="text-center"><b>Comments</b></label>
-                  
                 </div>
                 <textarea
                   id="description_new"
@@ -63,44 +49,53 @@ const AcceptedModal = (props) => {
                 /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
 
 <textarea value={value}  defaultValue="val" /> */
+              />
+                <div class="row">
+                  <div class="col-lg-12">
+                    <button class="btn btn-secondary float-right">Edit</button>
+                  </div>
+                </div>
+                   <div id="margin1" class="float-left w3-border w3-padding">
+                  <label className="text-center"><b>Comments</b></label>
+                </div>
+                <textarea
+                  id="description_new"
+                  rows="5" cols="51"
+                /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
+<textarea value={value}  defaultValue="val" /> */
                 />
-                            <div class="row">
-        <div class="col-lg-12">
-        <button class="btn btn-secondary float-right">Add</button>
-       </div>
-       </div>
-                <br/>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <button onClick={toggleNested} class="btn btn-secondary float-right">Add</button>
+                  </div>
+                </div>
               </div>
-
-
-
               <div class="col-sm-4">
                 <div id="margin1">
                   <div className="sidenav">
-<div id="margin1">
-  <b>
-                      <label  style={{textAlign: "center"}}><font size="3" >Accepted</font> </label>
+                    <div id="margin1">
+                      <b>
+                        <label style={{ textAlign: "center" }}><font size="3" >Accepted</font> </label>
                       </b>
-                      </div>
+                    </div>
 
-                    <br />
+                    
                     <label >TAGS</label>
-                    <br />
-
+                    
                     <textarea
                       id="description_new"
                       rows="3" cols="20" required
                     /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
    
     <textarea value={value}  defaultValue="val" /> */
-                    
+
                     />
-        <div class="row">
-        <div class="col-lg-12">
-        <button class="btn btn-secondary float-right">Edit</button>
-       </div>
-       </div>
-   
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <button class="btn btn-secondary float-right">Edit</button>
+                      </div>
+                    </div>
+
                     <label >DOMAIN</label>
                     <br />
 
@@ -122,10 +117,10 @@ const AcceptedModal = (props) => {
     <textarea value={value}  defaultValue="val" /> */
                     />
                     <div class="row">
-        <div class="col-lg-12">
-        <button class="btn btn-secondary float-right">Edit</button>
-       </div>
-       </div>
+                      <div class="col-lg-12">
+                        <button class="btn btn-secondary float-right">Edit</button>
+                      </div>
+                    </div>
 
 
                   </div>
@@ -133,10 +128,29 @@ const AcceptedModal = (props) => {
               </div>
             </div>
           </div>
-       
+
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>PITCHED</Button>{' '}
+          <Modal isOpen={nestedModal} toggle={toggleNested} onClosed={closeAll ? toggle : undefined}>
+            <ModalHeader>Reason For rejection</ModalHeader>
+            <ModalBody>
+              <form>
+                <div id="margin">
+                  <div className="form-group">
+                    <textarea
+                      className="form-control"
+                      id="description_new"
+                      rows="5" required
+                    />
+                  </div>
+                </div>
+              </form>
+            </ModalBody>
+            <ModalFooter>
+            <Button onClick={toggle}  color="primary">Submit</Button>
+            </ModalFooter>
+          </Modal>
         </ModalFooter>
       </Modal>
     </div>

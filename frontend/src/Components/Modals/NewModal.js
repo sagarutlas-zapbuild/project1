@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, Container, Col, ModalBody, ModalFooter, Label } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label } from 'reactstrap';
 
 const NewModal = (props) => {
   const {
@@ -15,10 +15,7 @@ const NewModal = (props) => {
     setNestedModal(!nestedModal);
     setCloseAll(false);
   }
-  const toggleAll = () => {
-    setNestedModal(!nestedModal);
-    setCloseAll(true);
-  }
+  
 
   return (
 
@@ -68,7 +65,7 @@ const NewModal = (props) => {
 
                     <textarea
                       id="description_new"
-                      rows="3" cols="22" required
+                      rows="3" cols="20" required
                     /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
    
     <textarea value={value}  defaultValue="val" /> */
@@ -78,7 +75,7 @@ const NewModal = (props) => {
 
                     <textarea
                       id="description_new"
-                      rows="3" cols="22" required
+                      rows="3" cols="20" required
                     /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
    
     <textarea value={value}  defaultValue="val" /> */
@@ -88,7 +85,7 @@ const NewModal = (props) => {
 
                     <textarea
                       id="description_new"
-                      rows="3" cols="22" required
+                      rows="3" cols="20" required
                     /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
    
     <textarea value={value}  defaultValue="val" /> */
@@ -117,13 +114,13 @@ Hence, complete functionality is still not achieved for second level modal*/}
                       id="description_new"
                       rows="5" required
                     />
-                    <Button color="primary" onClick={toggle}>Submit</Button>
+                  
                   </div>
                 </div>
               </form>
             </ModalBody>
             <ModalFooter>
-              <Button color="primary" onClick={toggle}>Something</Button>
+              <Button color="primary" onClick={toggle}>Submit</Button>
             </ModalFooter>
           </Modal>
         </ModalFooter>
