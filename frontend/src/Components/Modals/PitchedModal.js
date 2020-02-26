@@ -63,6 +63,10 @@ const PitchedModal = (props) => {
 <textarea value={value}  defaultValue="val" /> */
                 />
                 <br/>
+                <div>
+                <label className="text-center"><b>Attachement</b></label>
+              </div>
+          
               </div>
 
 
@@ -128,8 +132,7 @@ const PitchedModal = (props) => {
           </div>
               </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
+          <Button color="primary" onClick={toggle}>Response Generated</Button>{' '}
         </ModalFooter>
       </Modal>
     </div>

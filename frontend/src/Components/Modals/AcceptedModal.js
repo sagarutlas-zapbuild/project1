@@ -8,6 +8,7 @@ const AcceptedModal = (props) => {
 
   const [modal, setModal] = useState(false);
   const [nestedModal, setNestedModal] = useState(false);
+  const [nestedModal1,setNestedModal1] =useState(false);
   const [closeAll, setCloseAll] = useState(false);
 
 
@@ -16,7 +17,10 @@ const AcceptedModal = (props) => {
     setNestedModal(!nestedModal);
     setCloseAll(false);
   }
-  
+  const toggleNested1 = () => {
+    setNestedModal1(!nestedModal1);
+    setCloseAll(false);
+  }
 
   return (
     <div>
@@ -69,6 +73,9 @@ const AcceptedModal = (props) => {
                     <button onClick={toggleNested} class="btn btn-secondary float-right">Add</button>
                   </div>
                 </div>
+                <div>
+                <label className="text-center"><b>Attachement</b></label>
+              </div>
               </div>
               <div class="col-sm-4">
                 <div id="margin1">
@@ -131,9 +138,9 @@ const AcceptedModal = (props) => {
 
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>PITCHED</Button>{' '}
+          <Button color="primary" onClick={toggleNested1}>PITCHED</Button>{' '}
           <Modal isOpen={nestedModal} toggle={toggleNested} onClosed={closeAll ? toggle : undefined}>
-            <ModalHeader>Reason For rejection</ModalHeader>
+            <ModalHeader>Comments</ModalHeader>
             <ModalBody>
               <form>
                 <div id="margin">
@@ -151,6 +158,33 @@ const AcceptedModal = (props) => {
             <Button onClick={toggle}  color="primary">Submit</Button>
             </ModalFooter>
           </Modal>
+
+          <Modal isOpen={nestedModal1} toggle={toggleNested1} onClosed={closeAll ? toggle : undefined}>
+          <ModalHeader toggle={toggle}>{labelText}</ModalHeader>
+            <ModalBody>
+              <form>
+              <label>Estimated Budget ($) : </label>
+              <button class="btn btn-secondary float-right">Edit</button>
+
+
+                <div id="margin">
+                  <div className="form-group">
+                    <label> Add Remarks/Details</label>
+                  
+                    <textarea
+                      className="form-control"
+                      id="description_new"
+                      rows="5" required
+                    />
+                  </div>
+                </div>
+              </form>
+            </ModalBody>
+            <ModalFooter>
+            <Button onClick={toggle}  color="primary">Submit</Button>
+            </ModalFooter>
+          </Modal>
+
         </ModalFooter>
       </Modal>
     </div>
