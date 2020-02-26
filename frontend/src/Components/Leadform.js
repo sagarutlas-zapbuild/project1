@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap'
+
 const Leadform = (props) => {
   return (
     <Container>
@@ -25,12 +26,13 @@ const Leadform = (props) => {
                   </div>
                 </Col>
                 <Col >
-                  <div className="dropwn">
-                    <label htmlFor="source">
-                      Source*
-            </label>
-                    <br />
-                    <button className="form-control" id="source">Dropdown</button>
+                <div className="form-group">
+                  <label for="source">Source*</label><br></br>
+                            <select  name="Source"  id="Source" className="form-control">
+                            <option>choose any one</option>
+                            <option select>java</option>
+                            <option select>php</option>
+                            </select>
                   </div>
                 </Col>
               </Row>
@@ -84,7 +86,7 @@ const Leadform = (props) => {
             <Row>
               <Col>
                 <div className="form-group">
-                  <label  className="control-label col-sm-5"  htmlFor="attachment">
+                  <label  className="control-label col-sm-9"  htmlFor="attachment">
                     Attachment
             </label>
                   <input  className="control-input col-sm-3"  type="file" id="attachment"
@@ -93,15 +95,14 @@ const Leadform = (props) => {
                 </div>
               </Col>
               <Col >
-                <div className="form-group">
-                  <label htmlFor="technology">
-                    Technology*
-            </label>
-                  <br />
-                  <button className="form-control">Dropdown</button>
-                  <div  id="technology" >
+              <div className="form-group">
+                  <label for="source">Technology*</label><br></br>
+                            <select  name="Source"  id="technology" className="form-control">
+                            <option>choose any one</option>
+                            <option select>django</option>
+                            <option select>python</option>
+                            </select>
                   </div>
-                </div>
               </Col>
             </Row>
             <Row>
@@ -133,10 +134,13 @@ const Leadform = (props) => {
                     Assignee To 
                   
             </label>
-                  <button className="control-input col-sm-6" >Dropdown</button>
-                  <div className="dropdown-content" id="assignee">
+                            <select  className="control-label col-sm-6"  name="Source"  id="Source" >
+                            <option>choose any one</option>
+                            <option select>Aman</option>
+                            <option select>Sagar</option>
+                           
+                            </select>
                   </div>
-                </div>
               </Col>
             </Row>
             <row>
@@ -182,6 +186,8 @@ const Leadform = (props) => {
             </label>
                       <input className="control-input col-sm-6" type="Text" id="email" width="50px">
                       </input>
+                      <button type="button" className="add-icon">+</button>
+
                     </div>
                   </Col>
                   <Col >
@@ -229,11 +235,11 @@ const Leadform = (props) => {
                     </div>
                   </Col>
                   <Col >
-                    <div className="dropdown">
-                      <label classname="control-label col-sm-3" htmlFor="country">
-                        Country
+                  <div className="form-group">
+                      <label className="control-label col-sm-5" htmlFor="country">
+                      Country
             </label>
-                      <input classname="control-input col-sm-4" type="Text" id="country" width="50px">
+                      <input className="control-input col-sm-6" type="Text" id="country" width="50px">
                       </input>
 
                     </div>
@@ -241,10 +247,9 @@ const Leadform = (props) => {
                 </Row>
                 <Row>
                   <Col>
-
-                    <div className="form-group">
-                      <label classname="control-label col-sm-5" htmlFor="skype_id">
-                        Skype Id
+                  <div className="form-group">
+                      <label className="control-label col-sm-5" htmlFor="skype_id">
+                      Skype Id
             </label>
                       <input className="control-input col-sm-6" type="Text" id="skype_id" width="50px">
                       </input>
@@ -257,6 +262,7 @@ const Leadform = (props) => {
             </label>
                       <input className="control-input col-sm-6" type="Text" id="phone" width="50px">
                       </input>
+                      <button type="button" className="add-icon">+</button>
 
                     </div>
 
