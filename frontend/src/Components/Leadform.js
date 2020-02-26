@@ -28,7 +28,7 @@ const Leadform = (props) => {
                 <Col >
                 <div className="form-group">
                   <label for="source">Source*</label><br></br>
-                            <select  name="Source"  id="Source" className="form-control">
+                            <select  name="Source"  id="source" className="form-control">
                             <option>choose any one</option>
                             <option select>java</option>
                             <option select>php</option>
@@ -96,8 +96,8 @@ const Leadform = (props) => {
               </Col>
               <Col >
               <div className="form-group">
-                  <label for="source">Technology*</label><br></br>
-                            <select  name="Source"  id="technology" className="form-control">
+                  <label for="technology">Technology*</label><br></br>
+                            <select  name="technolgy"  id="technology" className="form-control">
                             <option>choose any one</option>
                             <option select>django</option>
                             <option select>python</option>
@@ -134,7 +134,7 @@ const Leadform = (props) => {
                     Assignee To 
                   
             </label>
-                            <select  className="control-label col-sm-6"  name="Source"  id="Source" >
+                            <select  className="control-label col-sm-6"  name="assignee"  id="assignee" >
                             <option>choose any one</option>
                             <option select>Aman</option>
                             <option select>Sagar</option>

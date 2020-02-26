@@ -25,6 +25,7 @@ const ReasponseGeneratedModal = (props) => {
               <div class="col-sm-8">
 
                 <textarea
+
                   id="description_new"
                   rows="5" cols="51" required
                 /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
@@ -36,6 +37,8 @@ const ReasponseGeneratedModal = (props) => {
                   
                 </div>
                 <textarea
+                                className="top"
+
                   id="description_new"
                   rows="5" cols="51" required
                 /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
@@ -56,6 +59,8 @@ const ReasponseGeneratedModal = (props) => {
                   
                 </div>
                 <textarea
+                                className="top"
+
                   id="description_new"
                   rows="5" cols="51" required
                 /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');

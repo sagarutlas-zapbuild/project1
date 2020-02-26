@@ -44,17 +44,20 @@ const AcceptedModal = (props) => {
 
 <textarea value={value}  defaultValue="val" /> */
                 />
+               
                 <div id="margin1" class="float-left w3-border w3-padding">
-                  <label className="text-center"><b>Prospect Detail</b></label>
+                  <label className="text-center "><b>Prospect Detail</b></label>
                 </div>
                 <textarea
-                  id="description_new"
+                className="top"
+                  id="description_new "
                   rows="5" cols="51"
                 /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
 
 <textarea value={value}  defaultValue="val" /> */
               />
-                <div class="row">
+              
+                <div className="row">
                   <div class="col-lg-12">
                     <button class="btn btn-secondary float-right">Edit</button>
                   </div>
@@ -63,6 +66,7 @@ const AcceptedModal = (props) => {
                   <label className="text-center"><b>Comments</b></label>
                 </div>
                 <textarea
+                className="top"
                   id="description_new"
                   rows="5" cols="51"
                 /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
@@ -75,6 +79,8 @@ const AcceptedModal = (props) => {
                 </div>
                 <div>
                 <label className="text-center"><b>Attachement</b></label>
+                <input  className="control-input col-sm-7"  type="file" id="attachment"
+                  />
               </div>
               </div>
               <div class="col-sm-4">
