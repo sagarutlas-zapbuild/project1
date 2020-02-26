@@ -26,13 +26,13 @@ const Leadform = (props) => {
                   </div>
                 </Col>
                 <Col >
-                <div className="form-group">
-                  <label for="source">Source*</label><br></br>
-                            <select  name="Source"  id="source" className="form-control">
-                            <option>choose any one</option>
-                            <option select>java</option>
-                            <option select>php</option>
-                            </select>
+                  <div className="form-group">
+                    <label for="source">Source*</label><br></br>
+                    <select name="Source" id="source" className="form-control">
+                      <option>choose any one</option>
+                      <option select>java</option>
+                      <option select>php</option>
+                    </select>
                   </div>
                 </Col>
               </Row>
@@ -86,34 +86,34 @@ const Leadform = (props) => {
             <Row>
               <Col>
                 <div className="form-group">
-                  <label  className="control-label col-sm-9"  htmlFor="attachment">
+                  <label className="control-label col-sm-9" htmlFor="attachment">
                     Attachment
             </label>
-                  <input  className="control-input col-sm-3"  type="file" id="attachment"
+                  <input className="control-input col-sm-3" type="file" id="attachment"
                   />
 
                 </div>
               </Col>
               <Col >
-              <div className="form-group">
+                <div className="form-group">
                   <label for="technology">Technology*</label><br></br>
-                            <select  name="technolgy"  id="technology" className="form-control">
-                            <option>choose any one</option>
-                            <option select>django</option>
-                            <option select>python</option>
-                            </select>
-                  </div>
+                  <select name="technolgy" id="technology" className="form-control">
+                    <option>choose any one</option>
+                    <option select>django</option>
+                    <option select>python</option>
+                  </select>
+                </div>
               </Col>
             </Row>
             <Row>
               <Col>
-              <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="estimated_budget">
-                        Estimated Budget($)
+                <div className="form-group">
+                  <label className="control-label col-sm-5" htmlFor="estimated_budget">
+                    Estimated Budget($)
             </label>
-                      <input className="control-input col-sm-7" type="Text" id="estimated_budget" width="50px">
-                      </input>
-                    </div>
+                  <input className="control-input col-sm-7" type="Text" id="estimated_budget" width="50px">
+                  </input>
+                </div>
                 <div className="form-group">
                   <label className="control-label col-sm-5" htmlFor="referred_by">
                     Referred By
@@ -127,166 +127,166 @@ const Leadform = (props) => {
                   <label className="control-label col-sm-6" htmlFor="assignee">
                     Assignee*
             </label>
-            <br/>
-            <label className="control-label col-sm-6" htmlFor="assignee">
-            <input type ="radio" ></input>
+                  <br />
+                  <label className="control-label col-sm-6" htmlFor="assignee">
+                    <input type="radio" ></input>
 
-                    Assignee To 
-                  
+                    Assignee To
+
             </label>
-                            <select  className="control-label col-sm-6"  name="assignee"  id="assignee" >
-                            <option>choose any one</option>
-                            <option select>Aman</option>
-                            <option select>Sagar</option>
-                           
-                            </select>
-                  </div>
+                  <select className="control-label col-sm-6" name="assignee" id="assignee" >
+                    <option>choose any one</option>
+                    <option select>Aman</option>
+                    <option select>Sagar</option>
+
+                  </select>
+                </div>
               </Col>
             </Row>
             <row>
-            <div className="form-group">           
-               <Col>
-               <input  type="Text"  value="Prospect Detail" className="text-center"></input>
-              <label  htmlFor="prospect_detail">Existing? </label>
-              </Col>
+              <div className="form-group">
+                <Col>
+                  <input type="Text" value="Prospect Detail" className="text-center"></input>
+                  <label htmlFor="prospect_detail">Existing? </label>
+                </Col>
               </div>
             </row>
             <div id="border">
               <div id="margin">
-              <form className="form-horizontal" action="/action_page.php">
+                <form className="form-horizontal" action="/action_page.php">
 
-                <Row>
-                  <Col>
+                  <Row>
+                    <Col>
 
-                    <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="full_name">
-                        Full Name
+                      <div className="form-group">
+                        <label className="control-label col-sm-5" htmlFor="full_name">
+                          Full Name
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="full_name" width="50px">
-                      </input>
-                    </div>
-                  </Col>
-                  <Col >
-                    <div className="dropdown">
-                      <label className="control-label col-sm-5" htmlFor="street_address">
-                        Street Address
+                        <input className="control-input col-sm-6" type="Text" id="full_name" width="50px">
+                        </input>
+                      </div>
+                    </Col>
+                    <Col >
+                      <div className="dropdown">
+                        <label className="control-label col-sm-5" htmlFor="street_address">
+                          Street Address
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="street_address" width="50px">
-                      </input>
+                        <input className="control-input col-sm-6" type="Text" id="street_address" width="50px">
+                        </input>
 
-                    </div>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
 
-                    <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="email">
-                        Email
+                      <div className="form-group">
+                        <label className="control-label col-sm-5" htmlFor="email">
+                          Email
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="email" width="50px">
-                      </input>
-                      <button type="button" className="add-icon">+</button>
+                        <input className="control-input col-sm-6" type="Text" id="email" width="50px">
+                        </input>
+                        <button type="button" className="add-icon">+</button>
 
-                    </div>
-                  </Col>
-                  <Col >
-                    <div className="dropdown">
-                      <label className="control-label col-sm-5" htmlFor="city">
-                        City
+                      </div>
+                    </Col>
+                    <Col >
+                      <div className="dropdown">
+                        <label className="control-label col-sm-5" htmlFor="city">
+                          City
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="city" width="50px">
-                      </input>
+                        <input className="control-input col-sm-6" type="Text" id="city" width="50px">
+                        </input>
 
-                    </div>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
 
-                    <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="company">
-                        Company
+                      <div className="form-group">
+                        <label className="control-label col-sm-5" htmlFor="company">
+                          Company
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="company" width="50px">
-                      </input>
-                    </div>
-                  </Col>
-                  <Col >
-                    <div className="dropdown">
-                      <label className="control-label col-sm-5" htmlFor="state">
-                        State
+                        <input className="control-input col-sm-6" type="Text" id="company" width="50px">
+                        </input>
+                      </div>
+                    </Col>
+                    <Col >
+                      <div className="dropdown">
+                        <label className="control-label col-sm-5" htmlFor="state">
+                          State
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="state" width="50px">
-                      </input>
+                        <input className="control-input col-sm-6" type="Text" id="state" width="50px">
+                        </input>
 
-                    </div>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
 
-                    <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="designation">
-                        Designation
+                      <div className="form-group">
+                        <label className="control-label col-sm-5" htmlFor="designation">
+                          Designation
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="designation" width="50px">
-                      </input>
-                    </div>
-                  </Col>
-                  <Col >
-                  <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="country">
-                      Country
+                        <input className="control-input col-sm-6" type="Text" id="designation" width="50px">
+                        </input>
+                      </div>
+                    </Col>
+                    <Col >
+                      <div className="form-group">
+                        <label className="control-label col-sm-5" htmlFor="country">
+                          Country
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="country" width="50px">
-                      </input>
+                        <input className="control-input col-sm-6" type="Text" id="country" width="50px">
+                        </input>
 
-                    </div>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="skype_id">
-                      Skype Id
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <div className="form-group">
+                        <label className="control-label col-sm-5" htmlFor="skype_id">
+                          Skype Id
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="skype_id" width="50px">
-                      </input>
-                    </div>
-                  </Col>
-                  <Col >
-                    <div className="dropdown">
-                      <label className="control-label col-sm-5" htmlFor="phone">
-                        Phone
+                        <input className="control-input col-sm-6" type="Text" id="skype_id" width="50px">
+                        </input>
+                      </div>
+                    </Col>
+                    <Col >
+                      <div className="dropdown">
+                        <label className="control-label col-sm-5" htmlFor="phone">
+                          Phone
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="phone" width="50px">
-                      </input>
-                      <button type="button" className="add-icon">+</button>
+                        <input className="control-input col-sm-6" type="Text" id="phone" width="50px">
+                        </input>
+                        <button type="button" className="add-icon">+</button>
 
-                    </div>
+                      </div>
 
-                  </Col>
-                </Row>
-              </form>
-            </div>
+                    </Col>
+                  </Row>
+                </form>
+              </div>
             </div>
           </b>
           <br />
           <Row>
             <Col>
 
-              <input  className ="text-center" type="Button" value="Submit And New" id="Submit_and_new">
+              <input className="text-center" type="Button" value="Submit And New" id="Submit_and_new">
               </input>
             </Col>
             <Col>
 
-              <input  className ="text-center" type="Button" value="Submit" id="submit">
+              <input className="text-center" type="Button" value="Submit" id="submit">
               </input>
             </Col>
             <Col>
 
-              <input  className ="text-center" type="Button" value="Cancel" id="cancel">
+              <input className="text-center" type="Button" value="Cancel" id="cancel">
               </input>
             </Col>
 
