@@ -13,14 +13,6 @@ class prospectSerializer(serializers.ModelSerializer):
         model = prospect
         fields = '__all__'
 
-"""         def create(self, validated_data):
-            profile_data = validated_data.pop('profile')
-            prospect1 = prospect.objects.create(**validated_data)
-            Profile.objects.create(prospect=prospect1, **profile_data)
-            return prospect
- """
-    
-
 class attachmentSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -43,4 +35,4 @@ class commentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = comment
-        fields = '__all__'
+        fields = '__all__' 

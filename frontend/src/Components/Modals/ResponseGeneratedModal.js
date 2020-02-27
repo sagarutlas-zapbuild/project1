@@ -12,14 +12,14 @@ const ReasponseGeneratedModal = (props) => {
 
   return (
     <div>
-      
+
       <Label className="Radio-label">{labelText}</Label>
       <input type="radio" name="new" onClick={toggle}></input>
-    
-      <Modal  className="modal-dailog modal-lg" isOpen={modal} toggle={toggle}>
-  <ModalHeader toggle={toggle}>{labelText}</ModalHeader>
+
+      <Modal className="modal-dailog modal-lg" isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>{labelText}</ModalHeader>
         <ModalBody>
-        <div class="container">
+          <div class="container">
             <div class="row">
 
               <div class="col-sm-8">
@@ -34,10 +34,10 @@ const ReasponseGeneratedModal = (props) => {
                 />
                 <div id="margin1" class="float-left w3-border w3-padding">
                   <label className="text-center"><b>Prospect Detail</b></label>
-                  
+
                 </div>
                 <textarea
-                                className="top"
+                  className="top"
 
                   id="description_new"
                   rows="5" cols="51" required
@@ -47,19 +47,19 @@ const ReasponseGeneratedModal = (props) => {
 
                 />
                 <div class="row">
-        <div class="col-lg-12">
-        <button class="btn btn-secondary float-right">Edit</button>
-       </div>
-       </div>
-                <br/>
-                <br/>
-                
+                  <div class="col-lg-12">
+                    <button class="btn btn-secondary float-right">Edit</button>
+                  </div>
+                </div>
+                <br />
+                <br />
+
                 <div id="margin1" class="float-left w3-border w3-padding">
                   <label className="text-center"><b>Comments</b></label>
-                  
+
                 </div>
                 <textarea
-                                className="top"
+                  className="top"
 
                   id="description_new"
                   rows="5" cols="51" required
@@ -67,7 +67,7 @@ const ReasponseGeneratedModal = (props) => {
 
 <textarea value={value}  defaultValue="val" /> */
                 />
-                <br/>
+                <br />
               </div>
 
 
@@ -75,11 +75,11 @@ const ReasponseGeneratedModal = (props) => {
               <div class="col-sm-4">
                 <div id="margin1">
                   <div className="sidenav">
-<div id="margin1">
-  <b>
-                      <label  style={{textAlign: "center"}}><font size="3" >Accepted</font> </label>
+                    <div id="margin1">
+                      <b>
+                        <label style={{ textAlign: "center" }}><font size="3" >Accepted</font> </label>
                       </b>
-                      </div>
+                    </div>
 
                     <br />
                     <label >TAGS</label>
@@ -91,14 +91,14 @@ const ReasponseGeneratedModal = (props) => {
                     /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
    
     <textarea value={value}  defaultValue="val" /> */
-                    
+
                     />
-        <div class="row">
-        <div class="col-lg-12">
-        <button class="btn btn-secondary float-right">Edit</button>
-       </div>
-       </div>
-   
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <button class="btn btn-secondary float-right">Edit</button>
+                      </div>
+                    </div>
+
                     <label >DOMAIN</label>
                     <br />
 
@@ -120,10 +120,10 @@ const ReasponseGeneratedModal = (props) => {
     <textarea value={value}  defaultValue="val" /> */
                     />
                     <div class="row">
-        <div class="col-lg-12">
-        <button class="btn btn-secondary float-right">Edit</button>
-       </div>
-       </div>
+                      <div class="col-lg-12">
+                        <button class="btn btn-secondary float-right">Edit</button>
+                      </div>
+                    </div>
 
 
                   </div>
@@ -131,9 +131,9 @@ const ReasponseGeneratedModal = (props) => {
               </div>
             </div>
           </div>
-       
 
-           </ModalBody>
+
+        </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
           <Button color="secondary" onClick={toggle}>Cancel</Button>

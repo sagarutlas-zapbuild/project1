@@ -12,14 +12,14 @@ const PitchedModal = (props) => {
 
   return (
     <div>
-      
+
       <Label className="Radio-label">{labelText}</Label>
       <input type="radio" name="new" onClick={toggle}></input>
-    
+
       <Modal className="modal-dailog modal-lg" isOpen={modal} toggle={toggle}>
-  <ModalHeader toggle={toggle}>{labelText}}</ModalHeader>
+        <ModalHeader toggle={toggle}>{labelText}}</ModalHeader>
         <ModalBody>
-        <div class="container">
+          <div class="container">
             <div class="row">
 
               <div class="col-sm-8">
@@ -34,10 +34,10 @@ const PitchedModal = (props) => {
                 />
                 <div id="margin1" class="float-left w3-border w3-padding">
                   <label className="text-center"><b>Prospect Detail</b></label>
-                  
+
                 </div>
                 <textarea
-                className="top"
+                  className="top"
                   id="description_new"
                   rows="5" cols="51" required
                 /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
@@ -46,19 +46,19 @@ const PitchedModal = (props) => {
 
                 />
                 <div class="row">
-        <div class="col-lg-12">
-        <button class="btn btn-secondary float-right">Edit</button>
-       </div>
-       </div>
-                <br/>
-                <br/>
-                
+                  <div class="col-lg-12">
+                    <button class="btn btn-secondary float-right">Edit</button>
+                  </div>
+                </div>
+                <br />
+                <br />
+
                 <div id="margin1" class="float-left w3-border w3-padding">
                   <label className="text-center"><b>Comments</b></label>
-                  
+
                 </div>
                 <textarea
-                                className="top"
+                  className="top"
 
                   id="description_new"
                   rows="5" cols="51" required
@@ -66,11 +66,11 @@ const PitchedModal = (props) => {
 
 <textarea value={value}  defaultValue="val" /> */
                 />
-                <br/>
+                <br />
                 <div>
-                <label className="text-center"><b>Attachement</b></label>
-              </div>
-          
+                  <label className="text-center"><b>Attachement</b></label>
+                </div>
+
               </div>
 
 
@@ -78,11 +78,11 @@ const PitchedModal = (props) => {
               <div class="col-sm-4">
                 <div id="margin1">
                   <div className="sidenav">
-<div id="margin1">
-  <b>
-                      <label className="text-center"><font size="3" >Pitched</font> </label>
+                    <div id="margin1">
+                      <b>
+                        <label className="text-center"><font size="3" >Pitched</font> </label>
                       </b>
-                      </div>
+                    </div>
 
                     <br />
                     <label >TAGS</label>
@@ -94,14 +94,14 @@ const PitchedModal = (props) => {
                     /*  let value = this.state.data.map(e=>JSON.stringify(e).replace(/{|}/g,'')).join(',\n');
    
     <textarea value={value}  defaultValue="val" /> */
-                    
+
                     />
-        <div class="row">
-        <div class="col-lg-12">
-        <button class="btn btn-secondary float-right">Edit</button>
-       </div>
-       </div>
-   
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <button class="btn btn-secondary float-right">Edit</button>
+                      </div>
+                    </div>
+
                     <label >DOMAIN</label>
                     <br />
 
@@ -123,10 +123,10 @@ const PitchedModal = (props) => {
     <textarea value={value}  defaultValue="val" /> */
                     />
                     <div class="row">
-        <div class="col-lg-12">
-        <button class="btn btn-secondary float-right">Edit</button>
-       </div>
-       </div>
+                      <div class="col-lg-12">
+                        <button class="btn btn-secondary float-right">Edit</button>
+                      </div>
+                    </div>
 
 
                   </div>
@@ -134,7 +134,7 @@ const PitchedModal = (props) => {
               </div>
             </div>
           </div>
-              </ModalBody>
+        </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>Response Generated</Button>{' '}
         </ModalFooter>

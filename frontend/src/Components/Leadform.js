@@ -2,10 +2,61 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col } from 'reactstrap'
 
-const Leadform = (props) => {
+class Leadform extends React.Component {
+  constructor(props){
+    super(props);
+    this.initialState=
+    {lead_title: '',
+    lead_source: '',
+    lead_description: '',
+    lead_url: '',
+    lead_domain: '',
+    lead_technology: '',
+    lead_estimated_budget: '',
+    lead_reffered_by: '',
+    lead_assignee: '',
+    lead_prospect:'',
+    lead_keyword_tags:'',
+    prospect_full_name:'' ,
+    prospect_company: '',
+    prospect_designation: '',
+    prospect_skype_id: '',
+    prospect_street_address: '',
+    prospect_city: '',
+    prospect_state: '',
+    prospect_country: '',
+    attachment: '',
+    attachment_lead: '',
+    email_id: '',
+    email_prospect:'',
+    phone_id: '',
+    phone_prospect: '',
+    comment: '',
+    comment_lead: ''
+
+      
+    }
+    this.state=this.initialState;
+    this.handelChange = this.handelChange.bind(this);
+    this.handelSubmit = this.handelSubmit.bind(this);
+  }
+  handelChange(event){
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState({
+      [name]: value,
+    })
+
+  }
+  handelSubmit(event) {
+    event.preventDefault();
+    console.log(this.state)
+  }
+ 
+ render(){
   return (
     <Container>
-      <form>
+      <form onSubmit={this.handelSubmit}>
         <div id="margin">
           <b>
             <label>  <h2>New Lead</h2>
@@ -15,24 +66,24 @@ const Leadform = (props) => {
               <Row>
                 <Col>
                   <div className="form-group">
-                    <label htmlFor="title">
+                    <label >
                       Title*
             </label>
-                    <textarea
+                    <input type="text"
                       className="form-control"
-                      id="title"
-                      rows="1" required
+                      name="lead_title"
+                      value={this.state.lead_title} onChange={this.handelChange}
                     />
                   </div>
                 </Col>
                 <Col >
-                <div className="form-group">
-                  <label for="source">Source*</label><br></br>
-                            <select  name="Source"  id="source" className="form-control">
-                            <option>choose any one</option>
-                            <option select>java</option>
-                            <option select>php</option>
-                            </select>
+                  <div className="form-group">
+                    <label>Source*</label><br></br>
+                    <select name="lead_source" value={this.state.lead_source} onChange={this.handelChange}  className="form-control">
+                      <option>choose any one</option>
+                      <option select>java</option>
+                      <option select>php</option>
+                    </select>
                   </div>
                 </Col>
               </Row>
@@ -40,44 +91,45 @@ const Leadform = (props) => {
             <Row>
               <Col>
                 <div className="form-group">
-                  <label htmlFor="description">
+                  <label >
                     Description
             </label>
                   <textarea
                     className="form-control"
-                    id="description"
                     rows="8" required
+                    name="lead_description"
+                    value={this.state.lead_description} onChange={this.handelChange}
                   />
                 </div>
               </Col>
               <Col>
                 <div className="form-group">
-                  <label htmlFor="url">
+                  <label>
                     URL
             </label>
-                  <textarea
-                    className="form-control"
-                    id="url"
-                    rows="1"
-                  />
+            <input type="text"
+                      className="form-control"
+                      name="lead_url"
+                      value={this.state.lead_url} onChange={this.handelChange}
+                    />
                   <div className="form-group">
-                    <label htmlFor="domain">
+                    <label>
                       Domain
             </label>
-                    <textarea
+            <input type="text"
                       className="form-control"
-                      id="domain"
-                      rows="1"
+                      name="lead_domain"
+                      value={this.state.lead_domain} onChange={this.handelChange}
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="keyword_tags">
+                    <label>
                       Keyword Tags
             </label>
-                    <textarea
+            <input type="text"
                       className="form-control"
-                      id="keyword_tags"
-                      rows="1"
+                      name="lead_keyword_tags"
+                      value={this.state.lead_keyword_tags} onChange={this.handelChange}
                     />
                   </div>
                 </div>
@@ -86,207 +138,234 @@ const Leadform = (props) => {
             <Row>
               <Col>
                 <div className="form-group">
-                  <label  className="control-label col-sm-9"  htmlFor="attachment">
+                  <label className="control-label col-sm-9">
                     Attachment
             </label>
-                  <input  className="control-input col-sm-3"  type="file" id="attachment"
+                  <input className="control-input col-sm-3" type="file" name="attachment"
+                  value={this.state.attachment} onChange={this.handelChange}
                   />
 
                 </div>
               </Col>
               <Col >
-              <div className="form-group">
-                  <label for="technology">Technology*</label><br></br>
-                            <select  name="technolgy"  id="technology" className="form-control">
-                            <option>choose any one</option>
-                            <option select>django</option>
-                            <option select>python</option>
-                            </select>
-                  </div>
+                <div className="form-group">
+                  <label>Technology*</label><br></br>
+                  <select name="lead_technology"   value={this.state.lead_technology} onChange={this.handelChange} className="form-control">
+                    <option>choose any one</option>
+                    <option select>django</option>
+                    <option select>python</option>
+                  </select>
+                </div>
               </Col>
             </Row>
             <Row>
               <Col>
-              <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="estimated_budget">
-                        Estimated Budget($)
-            </label>
-                      <input className="control-input col-sm-7" type="Text" id="estimated_budget" width="50px">
-                      </input>
-                    </div>
                 <div className="form-group">
-                  <label className="control-label col-sm-5" htmlFor="referred_by">
+                  <label className="control-label col-sm-5">
+                    Estimated Budget($)
+            </label>
+                  <input className="control-input col-sm-7" name="lead_estimated_budget"  type="Text" 
+                   value={this.state.lead_estimated_budget} onChange={this.handelChange} width="50px">
+                  </input>
+                </div>
+                <div className="form-group">
+                  <label className="control-label col-sm-5">
                     Referred By
             </label>
-                  <input className="control-input col-sm-7" type="Text" id="referred_by" width="50px">
+                  <input className="control-input col-sm-7"
+                   type="Text"
+                  name="lead_reffered_by"
+                  value={this.state.lead_reffered_by} onChange={this.handelChange}
+                   width="50px">
                   </input>
                 </div>
               </Col>
               <Col >
                 <div className="dropdown">
-                  <label className="control-label col-sm-6" htmlFor="assignee">
+                  <label className="control-label col-sm-6">
                     Assignee*
             </label>
-            <br/>
-            <label className="control-label col-sm-6" htmlFor="assignee">
-            <input type ="radio" ></input>
+                  <br />
+                  <label className="control-label col-sm-6">
+                    <input type="radio" ></input>
 
-                    Assignee To 
-                  
+                    Assignee To
+
             </label>
-                            <select  className="control-label col-sm-6"  name="assignee"  id="assignee" >
-                            <option>choose any one</option>
-                            <option select>Aman</option>
-                            <option select>Sagar</option>
-                           
-                            </select>
-                  </div>
+                  <select  name ="lead_assignee" value={this.state.lead_assignee} onChange={this.handelChange} className="control-label col-sm-6">
+                    <option>choose any one</option>
+                    <option select>Aman</option>
+                    <option select>Sagar</option>
+
+                  </select>
+                </div>
               </Col>
             </Row>
             <row>
-            <div className="form-group">           
-               <Col>
-               <input  type="Text"  value="Prospect Detail" className="text-center"></input>
-              <label  htmlFor="prospect_detail">Existing? </label>
-              </Col>
+              <div className="form-group">
+                <Col>
+                  <input type="Text" value="Prospect Detail" className="text-center"></input>
+                  <label>Existing? </label>
+                </Col>
               </div>
             </row>
             <div id="border">
               <div id="margin">
-              <form className="form-horizontal" action="/action_page.php">
+                <form className="form-horizontal" action="/action_page.php">
 
-                <Row>
-                  <Col>
+                  <Row>
+                    <Col>
 
-                    <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="full_name">
-                        Full Name
+                      <div className="form-group">
+                        <label className="control-label col-sm-5">
+                          Full Name
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="full_name" width="50px">
-                      </input>
-                    </div>
-                  </Col>
-                  <Col >
-                    <div className="dropdown">
-                      <label className="control-label col-sm-5" htmlFor="street_address">
-                        Street Address
+                        <input className="control-input col-sm-6"  name ="prospect_full_name" 
+                         value={this.state.prospect_full_name} onChange={this.handelChange}  
+                         type="Text"  width="50px">
+                        </input>
+                      </div>
+                    </Col>
+                    <Col >
+                      <div className="dropdown">
+                        <label className="control-label col-sm-5">
+                          Street Address
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="street_address" width="50px">
-                      </input>
+                        <input className="control-input col-sm-6" type="Text" name="prospect_street_address"
+                        value={this.state.prospect_street_address} onChange={this.handelChange} width="50px">
+                        </input>
 
-                    </div>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
 
-                    <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="email">
-                        Email
+                      <div className="form-group">
+                        <label className="control-label col-sm-5">
+                          Email
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="email" width="50px">
-                      </input>
-                      <button type="button" className="add-icon">+</button>
+                        <input className="control-input col-sm-6"
+                        name="email_id" 
+                         value={this.state.email_id} onChange={this.handelChange} width="50px">
+                        </input>
+                        <button type="button" className="add-icon">+</button>
 
-                    </div>
-                  </Col>
-                  <Col >
-                    <div className="dropdown">
-                      <label className="control-label col-sm-5" htmlFor="city">
-                        City
+                      </div>
+                    </Col>
+                    <Col >
+                      <div className="dropdown">
+                        <label className="control-label col-sm-5">
+                          City
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="city" width="50px">
-                      </input>
+                        <input className="control-input col-sm-6"  name="prospect_city"
+                        value={this.state.prospect_city} onChange={this.handelChange}
+                        type="Text"  width="50px">
+                        </input>
 
-                    </div>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
+                      </div>
+                    </Col>
+                  </Row>
+                  
+                  <Row>
+                    <Col>
 
-                    <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="company">
-                        Company
+                      <div className="form-group">
+                        <label className="control-label col-sm-5">
+                          Company
+            </label>    
+            <input className="control-input col-sm-6" 
+                  type="Text" name ="prospect_company"  cowidth="50px"
+                  value={this.state.prospect_company} onChange={this.handelChange}  
+                                     >
+                        </input>
+                      </div>
+                    </Col>
+                    <Col >
+                      <div className="dropdown">
+                        <label className="control-label col-sm-5">
+                          State
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="company" width="50px">
-                      </input>
-                    </div>
-                  </Col>
-                  <Col >
-                    <div className="dropdown">
-                      <label className="control-label col-sm-5" htmlFor="state">
-                        State
-            </label>
-                      <input className="control-input col-sm-6" type="Text" id="state" width="50px">
-                      </input>
+                        <input className="control-input col-sm-6" type="Text"
+                        value={this.state.prospect_state} onChange={this.handelChange}
+                          name ="prospect_state" width="50px">
+                        </input>
 
-                    </div>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
 
-                    <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="designation">
-                        Designation
+                      <div className="form-group">
+                        <label className="control-label col-sm-5">
+                          Designation
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="designation" width="50px">
-                      </input>
-                    </div>
-                  </Col>
-                  <Col >
-                  <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="country">
-                      Country
+                        <input className="control-input col-sm-6" type="Text" name="prospect_designation"
+                        value={this.state.prospect_designation} onChange={this.handelChange} width="50px">
+                        </input>
+                      </div>
+                    </Col>
+                    <Col >
+                      <div className="form-group">
+                        <label className="control-label col-sm-5">
+                          Country
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="country" width="50px">
-                      </input>
+                        <input className="control-input col-sm-6" type="Text"
+                        value={this.state.prospect_country} onChange={this.handelChange} 
+                         name="prospect_country" width="50px">
+                        </input>
 
-                    </div>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <div className="form-group">
-                      <label className="control-label col-sm-5" htmlFor="skype_id">
-                      Skype Id
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <div className="form-group">
+                        <label className="control-label col-sm-5">
+                          Skype Id
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="skype_id" width="50px">
-                      </input>
-                    </div>
-                  </Col>
-                  <Col >
-                    <div className="dropdown">
-                      <label className="control-label col-sm-5" htmlFor="phone">
-                        Phone
+                        <input className="control-input col-sm-6" type="Text"
+                        value={this.state.prospect_skype_id} onChange={this.handelChange} 
+                        name="prospect_skype_id" width="50px">
+                        </input>
+                      </div>
+                    </Col>
+                    <Col >
+                      <div className="dropdown">
+                        <label className="control-label col-sm-5">
+                          Phone
             </label>
-                      <input className="control-input col-sm-6" type="Text" id="phone" width="50px">
-                      </input>
-                      <button type="button" className="add-icon">+</button>
+                        <input className="control-input col-sm-6" type="Text" id="phone" width="50px">
+                        </input>
+                        <button type="button" name="phone_id" 
+                        value={this.state.phone_id} onChange={this.handelChange}
+                        className="add-icon">+</button>
 
-                    </div>
+                      </div>
 
-                  </Col>
-                </Row>
-              </form>
-            </div>
+                    </Col>
+                  </Row>
+                </form>
+              </div>
             </div>
           </b>
           <br />
           <Row>
             <Col>
 
-              <input  className ="text-center" type="Button" value="Submit And New" id="Submit_and_new">
+              <button className="text-center" type="submit" value="Submit And New" id="Submit_and_new">
+                Submit And New
+              </button>
+            </Col>
+            <Col>
+
+              <input className="text-center" type="Button" value="Submit" id="submit">
               </input>
             </Col>
             <Col>
 
-              <input  className ="text-center" type="Button" value="Submit" id="submit">
-              </input>
-            </Col>
-            <Col>
-
-              <input  className ="text-center" type="Button" value="Cancel" id="cancel">
+              <input className="text-center" type="Button" value="Cancel" id="cancel">
               </input>
             </Col>
 
@@ -296,6 +375,7 @@ const Leadform = (props) => {
       </form>
     </Container>
   );
+}
 }
 
 export default Leadform;
