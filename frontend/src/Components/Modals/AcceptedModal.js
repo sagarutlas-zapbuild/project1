@@ -166,7 +166,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label } from 'react
               </form>
             </ModalBody>
             <ModalFooter>
-              <Button onClick={toggle} color="primary">Submit</Button>
+              <Button onClick={toggle} color="primary" >Submit</Button>
             </ModalFooter>
           </Modal>
 

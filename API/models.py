@@ -43,3 +43,9 @@ class attachment(models.Model):
     attachment_id = models.AutoField(primary_key = True, unique = True)
     attachment = models.FileField(upload_to= 'uploads/')
     attachment_lead = models.ForeignKey(lead, on_delete = models.CASCADE)
+
+class comment(models.Model):
+    comment_id = models.AutoField(primary_key = True, unique = True)
+    comment = models.CharField(max_length= 500)
+    comment_date = models.DateField(auto_now=True)
+    comment_lead = models.ForeignKey(lead, on_delete = models.CASCADE)

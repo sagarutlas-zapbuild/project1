@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label } from 'reactstrap';
-import AcceptedModal from './AcceptedModal'
+//import {AcceptedModal} from './AcceptedModal'
+
+
 const NewModal = (props) => {
   const {
     labelText
@@ -15,8 +17,7 @@ const NewModal = (props) => {
     setNestedModal(!nestedModal);
     setCloseAll(false);
   }
-
-
+ 
   return (
 
     <div>
@@ -125,7 +126,8 @@ Hence, complete functionality is still not achieved for second level modal*/}
               </form>
             </ModalBody>
             <ModalFooter>
-              <Button color="primary" onClick={this.props.acceptedmodal}>Submit</Button>
+   
+              <Button color="primary" onClick = {toggle}>Submit</Button>
             </ModalFooter>
           </Modal>
         </ModalFooter>
