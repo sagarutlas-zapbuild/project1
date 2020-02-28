@@ -19,7 +19,8 @@ class leadViewSet(viewsets.ModelViewSet):
     print(queryset)
     
     def list(self, request):
-        serializer = leadSerializer(self.queryset, many=True)       
+        queryset = self.get_queryset()
+        serializer = leadSerializer(queryset, many=True)       
         return Response(serializer.data)
     
     def create(self, request):
