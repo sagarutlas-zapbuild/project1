@@ -11,7 +11,7 @@ class prospect(models.Model):
     prospect_full_name  = models.CharField(max_length = 50)
     prospect_company = models.CharField(max_length= 100)
     prospect_designation = models.CharField(max_length= 50)
-    prospect_skype_id = models.CharField(max_length=50)
+    prospect_skype_id = models.CharField(max_length=50, unique= True, )
     prospect_street_address = models.CharField(max_length= 40)
     prospect_city = models.CharField(max_length= 20)
     prospect_state = models.CharField(max_length= 20)
@@ -22,13 +22,15 @@ class lead(models.Model):
     lead_prospect = models.ForeignKey(prospect, on_delete = models.CASCADE)
     lead_title = models.CharField(max_length=50)
     lead_source = models.CharField(max_length=50)
-    lead_description = models.CharField(max_length=1000, default="")
+    lead_description = models.CharField(max_length=1000,)
     lead_url = models.URLField()
     lead_domain = models.CharField(max_length=50)
     lead_technology = models.CharField(max_length=50)
     lead_estimated_budget = models.DecimalField(max_digits = 15, decimal_places= 2)
     lead_reffered_by = models.CharField(max_length = 50)
     lead_assignee = models.CharField(max_length = 50)
+    lead_status = models.CharField(max_length= 20, default= 'New')
+    lead_keyword_tags = models.CharField(max_length= 100)
 
 
 class email(models.Model):

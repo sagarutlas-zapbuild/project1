@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import LeadDashboard from './Components/LeadDashboard'
 
 import Leadform from './Components/Leadform';
+import Axios from 'axios';
 //import Dashboard from './Components/LeadDashboard'
 
 class App extends Component{
@@ -19,7 +20,9 @@ class App extends Component{
   }
 
   componentDidMount() {
-    fetch("http://127.0.0.1:8000/prospects/")
+    Axios.get("http://127.0.0.1:8000/attachments/")
+
+
       .then(res => res.json())
       .then(
         (result) => {

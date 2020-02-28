@@ -13,9 +13,10 @@ from .models import lead, prospect, attachment, phone_number, email, comment
 # Create your views here.
 
 class leadViewSet(viewsets.ModelViewSet):
-
+    print('hiiii')
     serializer_class =leadSerializer
     queryset = lead.objects.all()
+    print(queryset)
     
     def list(self, request):
         serializer = leadSerializer(self.queryset, many=True)       
@@ -43,7 +44,7 @@ class leadViewSet(viewsets.ModelViewSet):
 class prospectViewSet(viewsets.ModelViewSet):
 
     serializer_class =prospectSerializer
-    queryset = prospect.objects.all()
+    # queryset = prospect.objects.all()
     
     def list(self, request):
         serializer = prospectSerializer(self.queryset, many=True)       
@@ -82,7 +83,7 @@ class prospectViewSet(viewsets.ModelViewSet):
 class attachmentViewSet(viewsets.ModelViewSet):
 
     serializer_class =attachmentSerializer
-    queryset = attachment.objects.all()
+    # queryset = attachment.objects.all()
     
     def list(self, request):
         serializer = attachmentSerializer(self.queryset, many=True)       
@@ -110,7 +111,7 @@ class attachmentViewSet(viewsets.ModelViewSet):
 class phone_numberViewSet(viewsets.ModelViewSet):
 
     serializer_class =phone_numberSerializer
-    queryset = phone_number.objects.all()
+    # queryset = phone_number.objects.all()
     
     def list(self, request):
         serializer = phone_numberSerializer(self.queryset, many=True)       
@@ -138,7 +139,7 @@ class phone_numberViewSet(viewsets.ModelViewSet):
 class emailViewSet(viewsets.ModelViewSet):
 
     serializer_class =emailSerializer
-    queryset = email.objects.all()
+    # queryset = email.objects.all()
     
     def list(self, request):
         serializer = emailSerializer(self.queryset, many=True)       
@@ -167,7 +168,7 @@ class emailViewSet(viewsets.ModelViewSet):
 class commentViewSet(viewsets.ModelViewSet):
 
     serializer_class =commentSerializer
-    queryset = comment.objects.all()
+    # queryset = comment.objects.all()
     
     def list(self, request):
         serializer = commentSerializer(self.queryset, many=True)       

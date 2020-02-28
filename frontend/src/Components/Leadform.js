@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col } from 'reactstrap'
+import Axios from 'axios';
 
 class Leadform extends React.Component {
   constructor(props){
@@ -50,8 +51,16 @@ class Leadform extends React.Component {
   }
   handelSubmit(event) {
     event.preventDefault();
+    this.setState(this.initialState);
     console.log(this.state)
-  }
+    Axios.post('http://127.0.0.1:8000/attachments/', this.state)
+    .then(response =>{
+      console.log(response)
+    })
+    .catch(error => {
+      console.log(error)
+     } )
+    }
  
  render(){
   return (
@@ -107,7 +116,7 @@ class Leadform extends React.Component {
                   <label>
                     URL
             </label>
-            <input type="text"
+            <input type="url"
                       className="form-control"
                       name="lead_url"
                       value={this.state.lead_url} onChange={this.handelChange}
@@ -336,7 +345,7 @@ class Leadform extends React.Component {
                         <label className="control-label col-sm-5">
                           Phone
             </label>
-                        <input className="control-input col-sm-6" type="Text" id="phone" width="50px">
+                        <input className="control-input col-sm-6" type="Text" width="50px">
                         </input>
                         <button type="button" name="phone_id" 
                         value={this.state.phone_id} onChange={this.handelChange}
@@ -360,7 +369,7 @@ class Leadform extends React.Component {
             </Col>
             <Col>
 
-              <input className="text-center" type="Button" value="Submit" id="submit">
+              <input className="text-center" type="submit" value="Submit" id="submit">
               </input>
             </Col>
             <Col>
