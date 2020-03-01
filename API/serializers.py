@@ -1,3 +1,4 @@
+
 from rest_framework import serializers
 from .models import lead, prospect, attachment, phone_number, email, comment
 
@@ -10,7 +11,7 @@ class prospectSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class leadSerializer(serializers.ModelSerializer):
-    lead_prospect = prospectSerializer()
+    """ lead_prospect = prospectSerializer() """
     class Meta:
         model = lead
         fields = ('lead_title', 'lead_source', 'lead_description', 'lead_url', 'lead_domain', 'lead_technology', 'lead_estimated_budget', 'lead_reffered_by', 'lead_assignee', 'lead_prospect', 'lead_keyword_tags')

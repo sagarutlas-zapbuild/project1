@@ -4,3 +4,4 @@ env
 *.pyc
 .vscode/settings.json
 db.sqlite3
+API/migrations

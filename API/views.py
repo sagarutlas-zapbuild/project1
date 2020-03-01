@@ -55,21 +55,18 @@ class prospectViewSet(viewsets.ModelViewSet):
 
 class leadViewSet(viewsets.ModelViewSet):
     queryset = lead.objects.all()
-
-    
-
+    serializer_class = leadSerializer
     def list(self, request):
         queryset = self.get_queryset()
         serializer = leadSerializer(queryset, many=True)       
         return Response(serializer.data)
     
     def create(self, request):
-
-        prospect_data = request.data.pop('lead_prospect')
-        print(request.data)     
-        Prospect = prospectSerializer(prospect_data)
-        prospect.objects.create(prospect_data)
-        #request.data['lead_prospect'] = prospect.objects.get(prospect_skype_id = prospect_data.get('prospect_skype_id')).prospect_id
+        prospect_data = request.data.pop('lead_prospect')  
+        Prospect = prospectSerializer(data=prospect_data)
+        if Prospect.is_valid():
+            Prospect = Prospect.save()
+            request.data['lead_prospect'] = Prospect.prospect_id
         serializer = leadSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()

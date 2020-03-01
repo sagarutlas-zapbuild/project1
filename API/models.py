@@ -7,7 +7,7 @@ from django.db import models
 
 
 class prospect(models.Model):
-    def __init__(self, items):
+    """ def __init__(self, items):
         this.prospect_full_name = items["prospect_full_name"]
         this.prospect_company = items["prospect_company"]
         this.prospect_designation = items["prospect_designation"]
@@ -15,7 +15,7 @@ class prospect(models.Model):
         this.prospect_street_address = items["prospect_street_address"]
         this.prospect_city = items["prospect_city"]
         this.prospect_state = items["prospect_state"]
-        this.prospect_country = items["prospect_country"]
+        this.prospect_country = items["prospect_country"] """
 
     prospect_id = models.AutoField(primary_key = True, unique = True)
     prospect_full_name  = models.CharField(max_length = 50)
