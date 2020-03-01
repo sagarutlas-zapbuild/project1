@@ -12,34 +12,6 @@ from .models import lead, prospect, attachment, phone_number, email, comment
 
 # Create your views here.
 
-class leadViewSet(viewsets.ModelViewSet):
-
-    serializer_class =leadSerializer
-    queryset = lead.objects.all()
-    
-    def list(self, request):
-        queryset = self.get_queryset()
-        serializer = leadSerializer(queryset, many=True)       
-        return Response(serializer.data)
-    
-    def create(self, request):
-        serializer = leadSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-    def retrieve(self, request, pk=None):
-        pass
-
-    def update(self, request, pk=None):
-        pass
-
-    def partial_update(self, request, pk=None):
-        pass
-
-    def destroy(self, request, pk=None):
-        pass
 
 class prospectViewSet(viewsets.ModelViewSet):
 
@@ -80,10 +52,47 @@ class prospectViewSet(viewsets.ModelViewSet):
 #            return Response(serializer.data, status=status.HTTP_201_CREATED)
 #        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class attachmentViewSet(viewsets.ModelViewSet):
 
-    serializer_class =attachmentSerializer
+class leadViewSet(viewsets.ModelViewSet):
+    queryset = lead.objects.all()
+
+    
+
+    def list(self, request):
+        queryset = self.get_queryset()
+        serializer = leadSerializer(queryset, many=True)       
+        return Response(serializer.data)
+    
+    def create(self, request):
+
+        prospect_data = request.data.pop('lead_prospect')
+        print(request.data)     
+        Prospect = prospectSerializer(prospect_data)
+        prospect.objects.create(prospect_data)
+        #request.data['lead_prospect'] = prospect.objects.get(prospect_skype_id = prospect_data.get('prospect_skype_id')).prospect_id
+        serializer = leadSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def retrieve(self, request, pk=None):
+        pass
+
+    def update(self, request, pk=None):
+        pass
+
+    def partial_update(self, request, pk=None):
+        pass
+
+    def destroy(self, request, pk=None):
+        pass
+
+
+class attachmentViewSet(viewsets.ModelViewSet):
     queryset = attachment.objects.all()
+    serializer_class =attachmentSerializer
+   
     
     def list(self, request):
         serializer = attachmentSerializer(self.queryset, many=True)       
@@ -110,8 +119,9 @@ class attachmentViewSet(viewsets.ModelViewSet):
 
 class phone_numberViewSet(viewsets.ModelViewSet):
 
-    serializer_class =phone_numberSerializer
+    
     queryset = phone_number.objects.all()
+    serializer_class =phone_numberSerializer
     
     def list(self, request):
         serializer = phone_numberSerializer(self.queryset, many=True)       
@@ -138,8 +148,9 @@ class phone_numberViewSet(viewsets.ModelViewSet):
 
 class emailViewSet(viewsets.ModelViewSet):
 
-    serializer_class =emailSerializer
+  
     queryset = email.objects.all()
+    serializer_class =emailSerializer(queryset, many=True)
     
     def list(self, request):
         serializer = emailSerializer(self.queryset, many=True)       
@@ -167,8 +178,9 @@ class emailViewSet(viewsets.ModelViewSet):
 
 class commentViewSet(viewsets.ModelViewSet):
 
-    serializer_class =commentSerializer
+   
     queryset = comment.objects.all()
+    serializer_class =commentSerializer
     
     def list(self, request):
         serializer = commentSerializer(self.queryset, many=True)       

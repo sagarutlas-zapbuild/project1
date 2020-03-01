@@ -123,17 +123,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000',
-    'http://localhost:3000',
-    'http://192.168.1.175:3000',
-<<<<<<< HEAD
-    
-)
-=======
-    'http://127.0.0.1:8000',
-    'http://192.168.1.215:3000'
-)
->>>>>>> 78172af229f13bb26cbe17728e614552b94f8717

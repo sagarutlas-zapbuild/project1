@@ -23,7 +23,3 @@ router.register(r'comments', views.commentViewSet, basename='comment')
 
 urlpatterns = router.urls 
 
-#urlpatterns = [
-#    path('prospects/', prospect_ViewSet, name='prospect-ViewSet'),
- #   path('prospects/<int:pk>/', prospect_detail, name='prospect-detail'),
-#]

@@ -1,38 +1,41 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row, Col, Label } from 'reactstrap'
 
 class Leadform extends React.Component {
   constructor(props){
     super(props);
     this.initialState=
     {lead_title: '',
-    lead_source: '',
-    lead_description: '',
-    lead_url: '',
-    lead_domain: '',
-    lead_technology: '',
-    lead_estimated_budget: '',
-    lead_reffered_by: '',
-    lead_assignee: '',
-    lead_prospect:'',
-    lead_keyword_tags:'',
+      lead_source: '',
+      lead_description: '',
+      lead_url: '',
+      lead_domain: '',
+      lead_technology: '',
+      lead_estimated_budget: '',
+      lead_reffered_by: '',
+      lead_assignee: '',
+      lead_prospect:'',
+      lead_keyword_tags:'',
+    
     prospect_full_name:'' ,
-    prospect_company: '',
-    prospect_designation: '',
-    prospect_skype_id: '',
-    prospect_street_address: '',
-    prospect_city: '',
-    prospect_state: '',
-    prospect_country: '',
+      prospect_company: '',
+      prospect_designation: '',
+      prospect_skype_id: '',
+      prospect_street_address: '',
+      prospect_city: '',
+      prospect_state: '',
+      prospect_country: '',
+    
     attachment: '',
-    attachment_lead: '',
-    email_id: '',
-    email_prospect:'',
+      attachment_lead: '',
+    
+   email_id: '',
+      email_prospect:'',
     phone_id: '',
-    phone_prospect: '',
-    comment: '',
-    comment_lead: ''
+      phone_prospect: '',
+   comment: '',
+      comment_lead: ''
 
       
     }
@@ -50,7 +53,48 @@ class Leadform extends React.Component {
   }
   handelSubmit(event) {
     event.preventDefault();
+    const data = {
+      lead_title: this.state.lead_title,
+      lead_source: this.state.lead_source,
+      lead_description: this.state.lead_description,
+      lead_url: this.state.lead_url,
+      lead_domain: this.state.lead_domain,
+      lead_technology: this.state.lead_technology,
+      lead_estimated_budget: this.state.lead_estimated_budget,
+      lead_reffered_by: this.state.lead_reffered_by,
+      lead_assignee: this.state.lead_assignee,
+      lead_prospect: {
+          prospect_full_name: this.state.prospect_full_name,
+          prospect_company: this.state.prospect_company,
+          prospect_designation: this.state.prospect_designation,
+          prospect_skype_id: this.state.prospect_skype_id,
+          prospect_street_address: this.state.prospect_street_address,
+          prospect_city: this.state.prospect_city,
+          prospect_state: this.state.prospect_state,
+          prospect_country: this.state.prospect_country
+      },
+      lead_keyword_tags: this.state.lead_keyword_tags
+  }
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+        "Vary": "Accept"}
+    };
+
+   /*  const response =  */fetch("http://127.0.0.1:8000/leads/",
+            options
+        ).then(response =>{
+          console.log(response)
+          })
+          .catch(error => {
+          console.log(error)
+          } );
+          /*   const responsejson = JSON.response.stringify();
+            console.log(responsejson);  */
     console.log(this.state)
+    console.log(options)
   }
  
  render(){
@@ -141,7 +185,7 @@ class Leadform extends React.Component {
                   <label className="control-label col-sm-9">
                     Attachment
             </label>
-                  <input className="control-input col-sm-3" type="file" name="attachment"
+                  <input className="control-inputcol-sm-3" type="file" name="attachment"
                   value={this.state.attachment} onChange={this.handelChange}
                   />
 
@@ -204,7 +248,7 @@ class Leadform extends React.Component {
             <row>
               <div className="form-group">
                 <Col>
-                  <input type="Text" value="Prospect Detail" className="text-center"></input>
+                  <Label value="Prospect Detail" className="text-center"></Label>
                   <label>Existing? </label>
                 </Col>
               </div>
@@ -306,7 +350,7 @@ class Leadform extends React.Component {
                         </input>
                       </div>
                     </Col>
-                    <Col >
+                    <Col >in
                       <div className="form-group">
                         <label className="control-label col-sm-5">
                           Country
