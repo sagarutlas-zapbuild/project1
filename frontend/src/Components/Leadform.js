@@ -83,7 +83,7 @@ class Leadform extends React.Component {
         "Vary": "Accept"}
     };
 
-   /*  const response =  */fetch("http://127.0.0.1:8000/leads/",
+   fetch("http://127.0.0.1:8000/leads/",
             options
         ).then(response =>{
           console.log(response)

@@ -14,16 +14,15 @@ from .models import lead, prospect, attachment, phone_number, email, comment
 
 
 class prospectViewSet(viewsets.ModelViewSet):
-
-    serializer_class =prospectSerializer
     queryset = prospect.objects.all()
+    serializer_class = prospectSerializer
     
     def list(self, request):
         serializer = prospectSerializer(self.queryset, many=True)       
         return Response(serializer.data)
     
     def create(self, request):
-        serializer = prospectSerializer(data=request.data)
+        serializer= prospectSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -40,34 +39,18 @@ class prospectViewSet(viewsets.ModelViewSet):
 
     def destroy(self, request, pk=None):
         pass
-    
-#    def get(self, request):
-#        prospect1 = prospect.objects.all()
-#        serializer = prospectSerializer(prospect1, many = True)
-#        return Response(serializer.data)
-#    def post(self, request):
-#        serializer = prospectSerializer(data=request.data)
-#        if serializer.is_valid():
-#            serializer.save()
-#            return Response(serializer.data, status=status.HTTP_201_CREATED)
-#        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 class leadViewSet(viewsets.ModelViewSet):
     queryset = lead.objects.all()
     serializer_class = leadSerializer
     def list(self, request):
-        queryset = self.get_queryset()
-        serializer = leadSerializer(queryset, many=True)       
+        serializer = leadSerializer(self.queryset, many=True)       
         return Response(serializer.data)
     
     def create(self, request):
-        prospect_data = request.data.pop('lead_prospect')  
-        Prospect = prospectSerializer(data=prospect_data)
-        if Prospect.is_valid():
-            Prospect = Prospect.save()
-            request.data['lead_prospect'] = Prospect.prospect_id
-        serializer = leadSerializer(data=request.data)
+        serializer= leadSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -144,10 +127,9 @@ class phone_numberViewSet(viewsets.ModelViewSet):
         pass
 
 class emailViewSet(viewsets.ModelViewSet):
-
-  
     queryset = email.objects.all()
-    serializer_class =emailSerializer(queryset, many=True)
+    serializer_class = emailSerializer
+   
     
     def list(self, request):
         serializer = emailSerializer(self.queryset, many=True)       
