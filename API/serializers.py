@@ -28,9 +28,9 @@ class prospectSerializer(serializers.ModelSerializer):
         email_data = validated_data.pop('prospect_email')
         Prospect = prospect.objects.create(**validated_data)
         for phone_object in phone_data:
-            append(phone_number.objects.create(prospect = Prospect, **phone_object)) 
+            phone_number.objects.create(prospect = Prospect, **phone_object)
         for email_object in email_data:
-            append(email.objects.create(prospect = Prospect, **email_object))
+            email.objects.create(prospect = Prospect, **email_object)
         return Prospect
 
 

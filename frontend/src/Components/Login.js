@@ -1,5 +1,6 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
+ 
 function Login() {
     return (
         <div id="margin">
@@ -21,7 +22,7 @@ function Login() {
             </label>
             <br />
             <br />
-            <input type="button" name="Login" value="Login"></input>
+           <button  type="submit" onClick={() => window.location.reload(true)}><Link to="leaddash"></Link>submit</button>
         </div>
 
     );
