@@ -4,11 +4,7 @@ from django.db import models
 
 
 
-class email(models.Model):
-    email_id = models.EmailField(primary_key= False, unique= False, null = True)
 
-class phone_number(models.Model):
-    phone_id = models.BigIntegerField(primary_key= False, unique= False, null = True)
 
 class prospect(models.Model):
     prospect_id = models.AutoField(primary_key = True, unique = True)
@@ -20,8 +16,6 @@ class prospect(models.Model):
     prospect_city = models.CharField(max_length= 20)
     prospect_state = models.CharField(max_length= 20)
     prospect_country = models.CharField(max_length= 55)
-    prospect_email = models.ForeignKey(email, on_delete = models.DO_NOTHING, blank = True)
-    prospect_phone = models.ForeignKey(phone_number, on_delete = models.DO_NOTHING,blank = True)
 
 
 class lead(models.Model):
@@ -40,7 +34,13 @@ class lead(models.Model):
     lead_keyword_tags = models.CharField(max_length= 100)
 
 
+class email(models.Model):
+    email_id = models.EmailField(primary_key= True)
+    email_prospect = models.ForeignKey(prospect, on_delete = models.CASCADE)
 
+class phone_number(models.Model):
+    phone_id = models.BigIntegerField(primary_key= False, unique= False, null = True)
+    phone_prospect = models.ForeignKey(prospect, on_delete = models.CASCADE)
 
 class attachment(models.Model):
     attachment_id = models.AutoField(primary_key = True, unique = True)
