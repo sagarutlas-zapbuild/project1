@@ -1,9 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+
 
 # Create your models here.
 
 
-class prospect(models.Model):
+class Prospect(models.Model):
     prospect_id = models.AutoField(primary_key=True, unique=True)
     prospect_full_name = models.CharField(max_length=50)
     prospect_company = models.CharField(max_length=100)
@@ -17,10 +19,10 @@ class prospect(models.Model):
     prospect_email = models.EmailField(unique=True)
 
 
-class lead(models.Model):
+class Lead(models.Model):
     lead_id = models.AutoField(primary_key=True, unique=True)
     lead_prospect = models.ForeignKey(
-        prospect, on_delete=models.CASCADE, related_name='prospect')
+        Prospect, on_delete=models.CASCADE, related_name='lead')
     lead_title = models.CharField(max_length=50)
     lead_source = models.CharField(max_length=50)
     lead_description = models.TextField()
@@ -33,23 +35,29 @@ class lead(models.Model):
     lead_assignee = models.CharField(max_length=50)
     lead_status = models.CharField(max_length=20, default='New')
     lead_keyword_tags = models.CharField(max_length=100)
+    lead_date = models.DateTimeField(auto_now_add=True)
 
 
-class attachment(models.Model):
+class Attachment(models.Model):
     attachment_id = models.AutoField(primary_key=True, unique=True)
     attachment = models.FileField(upload_to='uploads/')
-    attachment_lead = models.ForeignKey(lead, on_delete=models.CASCADE, related_name= 'attachment')
+    attachment_lead = models.ForeignKey(
+        Lead, on_delete=models.CASCADE, related_name='attachment')
 
 
-class comment(models.Model):
+class Comment(models.Model):
     comment_id = models.AutoField(primary_key=True, unique=True)
     comment = models.TextField()
-    comment_date = models.DateField(auto_now=True)
-    comment_lead = models.ForeignKey(lead, on_delete=models.CASCADE, related_name= 'comment')
-
-class user(models.Model):
-    user_name = models.CharField(max_length= 25)
-    user_email = models.EmailField(unique= True)
-    user_password = models.CharField(max_length= 255)
+    comment_date = models.DateTimeField(auto_now_add=True)
+    comment_lead = models.ForeignKey(
+        Lead, on_delete=models.CASCADE, related_name='comment')
 
 
+class User(AbstractBaseUser):
+    user_name = models.CharField(max_length=25)
+    user_email = models.EmailField(unique=True)
+    user_password = models.CharField(max_length=255)
+
+
+    USERNAME_FIELD = 'user_email'
+    objects = BaseUserManager()

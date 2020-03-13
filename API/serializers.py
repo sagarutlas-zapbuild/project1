@@ -1,44 +1,49 @@
 from rest_framework import serializers
-from .models import lead, prospect, attachment, comment
+from .models import Lead, Prospect, Attachment, Comment, User
 from rest_framework.response import Response
 from rest_framework import status
 
 
-class prospectSerializer(serializers.ModelSerializer):
+class ProspectSerializer(serializers.ModelSerializer):
     class Meta:
-        model = prospect
+        model = Prospect
         fields = '__all__'
 
 
-class leadSerializer(serializers.ModelSerializer):
-    lead_prospect = prospectSerializer()
+class LeadSerializer(serializers.ModelSerializer):
+    lead_prospect = ProspectSerializer()
     """ lead_attachment = lead.comment """
     class Meta:
-        model = lead
+        model = Lead
         fields = '__all__'
 
     def create(self, validated_data):
         prospect_data = validated_data.pop('lead_prospect')
-        Prospect = prospect.objects.create(**prospect_data)
-        Lead = lead.objects.create(lead_prospect=Prospect, **validated_data)
+        prospect = Prospect.objects.create(**prospect_data)
+        lead = Lead.objects.create(lead_prospect=prospect, **validated_data)
         """ attachment_data = validated_data.pop('lead_attachment')
         attachments = []
         for attachment_object in attachment_data:
             attachments.append(attachment.objects.create(**attachment_object)) """
-        return (Lead)
+        return (lead)
 
 
-class attachmentSerializer(serializers.ModelSerializer):
-    attachment_lead = leadSerializer()
+class AttachmentSerializer(serializers.ModelSerializer):
+    attachment_lead = LeadSerializer()
 
     class Meta:
-        model = attachment
+        model = Attachment
         fields = ('attachment_id', 'attachment', 'attachment_lead')
 
 
-class commentSerializer(serializers.ModelSerializer):
-    comment_lead = leadSerializer()
+class CommentSerializer(serializers.ModelSerializer):
+    comment_lead = LeadSerializer()
 
     class Meta:
-        model = comment
+        model = Comment
         fields = ('comment', 'comment_id', 'comment_date', 'comment_lead')
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = '__all__'

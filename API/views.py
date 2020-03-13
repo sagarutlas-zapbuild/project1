@@ -3,25 +3,26 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import leadSerializer, prospectSerializer, attachmentSerializer, commentSerializer
+from .serializers import LeadSerializer, ProspectSerializer, AttachmentSerializer, CommentSerializer, UserSerializer
 from django.http import HttpResponse
 from rest_framework import status
-from .models import lead, prospect, attachment, comment
-
+from .models import Lead, Prospect, Attachment, Comment, User
+from rest_framework.decorators import action
+""" from rest_framework_jwt import  """
 
 # Create your views here.
 
-class commentViewSet(viewsets.ModelViewSet):
+class CommentViewSet(viewsets.ModelViewSet):
 
-    queryset = comment.objects.all()
-    serializer_class = commentSerializer
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
 
     def list(self, request):
-        serializer = commentSerializer(self.queryset, many=True)
+        serializer = CommentSerializer(self.queryset, many=True)
         return Response(serializer.data)
 
     def create(self, request):
-        serializer = commentSerializer(data=request.data)
+        serializer = CommentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -40,16 +41,16 @@ class commentViewSet(viewsets.ModelViewSet):
         pass
 
 
-class prospectViewSet(viewsets.ModelViewSet):
-    queryset = prospect.objects.all()
-    serializer_class = prospectSerializer
+class ProspectViewSet(viewsets.ModelViewSet):
+    queryset = Prospect.objects.all()
+    serializer_class = ProspectSerializer
 
     def list(self, request):
-        serializer = prospectSerializer(self.queryset, many=True)
+        serializer = ProspectSerializer(self.queryset, many=True)
         return Response(serializer.data)
 
     def create(self, request):
-        serializer = prospectSerializer(data=request.data)
+        serializer = ProspectSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -68,16 +69,16 @@ class prospectViewSet(viewsets.ModelViewSet):
         pass
 
 
-class leadViewSet(viewsets.ModelViewSet):
-    queryset = lead.objects.all()
-    serializer_class = leadSerializer
+class LeadViewSet(viewsets.ModelViewSet):
+    queryset = Lead.objects.all()
+    serializer_class = LeadSerializer
 
     def list(self, request):
-        serializer = leadSerializer(self.queryset, many=True)
+        serializer = LeadSerializer(self.queryset, many=True)
         return Response(serializer.data)
 
     def create(self, request):
-        serializer = leadSerializer(data=request.data)
+        serializer = LeadSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -96,16 +97,16 @@ class leadViewSet(viewsets.ModelViewSet):
         pass
 
 
-class attachmentViewSet(viewsets.ModelViewSet):
-    queryset = attachment.objects.all()
-    serializer_class = attachmentSerializer
+class AttachmentViewSet(viewsets.ModelViewSet):
+    queryset = Attachment.objects.all()
+    serializer_class = AttachmentSerializer
 
     def list(self, request):
-        serializer = attachmentSerializer(self.queryset, many=True)
+        serializer = AttachmentSerializer(self.queryset, many=True)
         return Response(serializer.data)
 
     def create(self, request):
-        serializer = attachmentSerializer(data=request.data)
+        serializer = AttachmentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -122,3 +123,32 @@ class attachmentViewSet(viewsets.ModelViewSet):
 
     def destroy(self, request, pk=None):
         pass
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+    def list(self, request):
+        serializer = UserSerializer(self.queryset, many=True)
+        return Response(serializer.data)
+
+    def create(self, request):
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def retrieve(self, request, pk=None):
+        pass
+
+    def update(self, request, pk=None):
+        pass
+
+    def partial_update(self, request, pk=None):
+        pass
+
+    def destroy(self, request, pk=None):
+        pass
+
