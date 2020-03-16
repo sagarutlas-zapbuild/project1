@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, ListGroup, ListGroupItem, ListGroupItemHeading, Col, Row } from 'reactstrap'
-import ModalConductor from './Conductors/ModalConductor'
+import ModalConductor from './Conductors/ModalConductor' 
 
 
 
@@ -9,7 +9,7 @@ class Dashboard extends React.Component {
     render() {
         return (
             <Container fluid={true} className="Full-screen">
-                <Row>
+                <Row className = "Dashboard">
                     <Col className="Sidebar" sm="1">
                         For Sidebar
                 </Col>

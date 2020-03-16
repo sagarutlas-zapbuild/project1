@@ -17,8 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 from API import urls
-from rest_framework_jwt.views import obtain_jwt_token
+from rest_framework_jwt.views import ObtainJSONWebToken, RefreshJSONWebToken
 
+
+
+obtain_jwt_token = ObtainJSONWebToken.as_view()
 
 urlpatterns = [
     path('', include('API.urls')),

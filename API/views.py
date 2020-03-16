@@ -8,9 +8,15 @@ from django.http import HttpResponse
 from rest_framework import status
 from .models import Lead, Prospect, Attachment, Comment, User
 from rest_framework.decorators import action
-""" from rest_framework_jwt import  """
+from rest_framework_jwt import authentication
 
 # Create your views here.
+
+
+
+class MyJWTAuthentication(authentication.JSONWebTokenAuthentication):
+    user_model = 'User'
+
 
 class CommentViewSet(viewsets.ModelViewSet):
 
@@ -128,6 +134,7 @@ class AttachmentViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    authentication_classes = (MyJWTAuthentication, )
 
     def list(self, request):
         serializer = UserSerializer(self.queryset, many=True)

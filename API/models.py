@@ -1,9 +1,26 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-
+from django.contrib.auth.models import PermissionsMixin
+""" from django.contrib.auth.models import UserManager """
 
 # Create your models here.
 
+
+class UserManager(BaseUserManager):
+    use_in_migrations = True
+    def create_user(self, user_email, user_name, password):
+        if not user_email:
+            raise ValueError("ENTER AN EMAIL BUDDY")
+        if not user_name:
+            raise ValueError("I KNOW YOU HAVE A NAME")
+        if not password:
+            raise ValueError("PASSWORD?!?!?!? HELLO??")
+        user = self.model(
+             user_email = self.normalize_email(user_email),
+             user_name = user_name)
+        user.set_password(password)
+        user.save()
+        return user
 
 class Prospect(models.Model):
     prospect_id = models.AutoField(primary_key=True, unique=True)
@@ -53,11 +70,13 @@ class Comment(models.Model):
         Lead, on_delete=models.CASCADE, related_name='comment')
 
 
-class User(AbstractBaseUser):
+class User(AbstractBaseUser, PermissionsMixin):
     user_name = models.CharField(max_length=25)
     user_email = models.EmailField(unique=True)
-    user_password = models.CharField(max_length=255)
+    password = models.CharField(max_length=255)
+    is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
 
 
     USERNAME_FIELD = 'user_email'
-    objects = BaseUserManager()
+    objects = UserManager()
