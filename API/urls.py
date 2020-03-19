@@ -14,4 +14,4 @@ router.register(r'comments', views.CommentViewSet, basename='comment')
 router.register(r'users', views.UserViewSet, basename='user')
 """ router.register('current_user', views.current_user, basename='current_user') """
 
-urlpatterns = [path('/', include(router.urls)), path('current_user/', views.current_user),]
+urlpatterns = [path('', include(router.urls)), path('current_user/', views.current_user),]

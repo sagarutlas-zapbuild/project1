@@ -100,6 +100,7 @@ class App extends Component {
         localStorage.setItem('token', json.token);
         localStorage.setItem('user_id', json.user.id);
         localStorage.setItem('user_email', json.user.user_email);
+        localStorage.setItem('user_name', json.user.user_name)
         this.setState({
           logged_in: true,
           displayed_form: '',
@@ -109,7 +110,7 @@ class App extends Component {
 
   handle_logout = () => {
     localStorage.clear();
-    this.setState({ logged_in: false, username: '' });
+    this.setState({ logged_in: false});
   };
 
   display_form = form => {
@@ -142,7 +143,7 @@ class App extends Component {
           {form}
           <h3>
             {this.state.logged_in
-              ? `Hello, ${this.state.username}`
+              ? `Hello, ${localStorage.getItem('user_name')}`
               : 'Please Log In'}
           </h3>
         </div>

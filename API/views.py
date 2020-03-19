@@ -14,18 +14,19 @@ from rest_framework.decorators import api_view
 
 # Create your views here.
 
+
 @api_view(['GET'])
 def current_user(request):
     """
     Determine the current user by their token, and return their data
     """
-    
+
     serializer = UserSerializer(request.user)
     return Response(serializer.data)
 
+
 class MyJWTAuthentication(authentication.JSONWebTokenAuthentication):
     user_model = 'API.User'
-    
 
 
 class CommentViewSet(viewsets.ModelViewSet):
@@ -144,7 +145,7 @@ class AttachmentViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    authentication_classes = (MyJWTAuthentication, )
+    authentication_classes = (authentication.JSONWebTokenAuthentication, )
 
     def list(self, request):
         serializer = UserSerializer(self.queryset, many=True)
@@ -152,7 +153,6 @@ class UserViewSet(viewsets.ModelViewSet):
 
     def create(self, request):
         serializer = UserSerializer(data=request.data)
-        print(serializer)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -169,5 +169,3 @@ class UserViewSet(viewsets.ModelViewSet):
 
     def destroy(self, request, pk=None):
         pass
-
-
