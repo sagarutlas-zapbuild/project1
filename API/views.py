@@ -9,13 +9,23 @@ from rest_framework import status
 from .models import Lead, Prospect, Attachment, Comment, User
 from rest_framework.decorators import action
 from rest_framework_jwt import authentication
+from rest_framework_jwt.views import VerifyJSONWebToken
+from rest_framework.decorators import api_view
 
 # Create your views here.
 
-
+@api_view(['GET'])
+def current_user(request):
+    """
+    Determine the current user by their token, and return their data
+    """
+    
+    serializer = UserSerializer(request.user)
+    return Response(serializer.data)
 
 class MyJWTAuthentication(authentication.JSONWebTokenAuthentication):
-    user_model = 'User'
+    user_model = 'API.User'
+    
 
 
 class CommentViewSet(viewsets.ModelViewSet):
@@ -142,6 +152,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
     def create(self, request):
         serializer = UserSerializer(data=request.data)
+        print(serializer)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -158,4 +169,5 @@ class UserViewSet(viewsets.ModelViewSet):
 
     def destroy(self, request, pk=None):
         pass
+
 

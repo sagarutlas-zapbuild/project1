@@ -21,7 +21,7 @@ from rest_framework_jwt.views import ObtainJSONWebToken, RefreshJSONWebToken
 
 
 
-obtain_jwt_token = ObtainJSONWebToken.as_view()
+obtain_jwt_token = ObtainJSONWebToken.as_view(user_model = 'API.User')
 
 urlpatterns = [
     path('', include('API.urls')),

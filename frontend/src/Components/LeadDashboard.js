@@ -5,6 +5,11 @@ import ModalConductor from './Conductors/ModalConductor'
 
 
 class Dashboard extends React.Component {
+    
+    
+    componentDidMount() {
+        /* fetch() */
+    }
 
     render() {
         return (
