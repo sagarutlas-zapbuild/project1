@@ -24,7 +24,6 @@ def current_user(request):
     serializer = UserSerializer(request.user)
     return Response(serializer.data)
 
-authentication_classes = (authentication.JSONWebTokenAuthentication, )
 
 class CommentViewSet(viewsets.ModelViewSet):
 
@@ -142,7 +141,7 @@ class AttachmentViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    
+    authentication_classes = (authentication.JSONWebTokenAuthentication, )
 
     def list(self, request):
         serializer = UserSerializer(self.queryset, many=True)

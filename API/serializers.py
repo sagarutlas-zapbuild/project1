@@ -11,16 +11,17 @@ class ProspectSerializer(serializers.ModelSerializer):
 
 
 class LeadSerializer(serializers.ModelSerializer):
-    lead_prospect = ProspectSerializer()
+    """ lead_prospect = ProspectSerializer() """
     """ lead_attachment = lead.comment """
     class Meta:
         model = Lead
         fields = '__all__'
 
     def create(self, validated_data):
-        prospect_data = validated_data.pop('lead_prospect')
-        prospect = Prospect.objects.create(**prospect_data)
-        lead = Lead.objects.create(lead_prospect=prospect, **validated_data)
+        """ prospect_data = validated_data.pop('lead_prospect')
+        prospect = Prospect.objects.create(**prospect_data) """
+        """ lead_prospect=prospect, """
+        lead = Lead.objects.create( **validated_data)
         """ attachment_data = validated_data.pop('lead_attachment')
         attachments = []
         for attachment_object in attachment_data:
